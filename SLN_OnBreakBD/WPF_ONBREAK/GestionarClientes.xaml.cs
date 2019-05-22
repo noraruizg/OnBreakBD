@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,11 @@ namespace WPF_ONBREAK
         {
             InitializeComponent();
             dgridListClientes.ItemsSource = App.clientes.Mostrar;
-            dgridListClientes.IsReadOnly = true;
-            dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
-            dgridListClientes.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
-            dgridListClientes.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta
-            dgridListClientes.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
+            //dgridListClientes.IsReadOnly = true;
+            //dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
+            //dgridListClientes.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
+            //dgridListClientes.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta
+            //dgridListClientes.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
 
 
         }

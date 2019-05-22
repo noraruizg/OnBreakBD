@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Biblioteca
+namespace BLL
 {
     public static class validar_mail
     {

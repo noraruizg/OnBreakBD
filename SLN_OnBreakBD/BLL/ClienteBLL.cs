@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BLL;
+using DAL;
+using System.Data.Entity;
 
-namespace Biblioteca
+
+namespace BLL
 {
-    public class Cliente
+    public class ClienteBLL
     {
+       
 
         private string rut;
 
-        public string Rut
-        {
+        public string RutCliente
+    {
             get { return rut; }
             set
             {
@@ -27,6 +30,7 @@ namespace Biblioteca
                 }
             }
         }
+
 
         private string razonSocial;
 
@@ -45,9 +49,11 @@ namespace Biblioteca
                 }
             }
         }
+        
+
         private string nombreContrato;
 
-        public string NombreContrato
+        public string NombreContacto
         {
             get { return nombreContrato; }
             set
@@ -62,6 +68,9 @@ namespace Biblioteca
                 }
             }
         }
+
+        
+
         private string mailContacto;
 
         public string MailContacto
@@ -81,6 +90,7 @@ namespace Biblioteca
             }
         }
 
+
         private string direccion;
 
         public string Direccion
@@ -99,14 +109,14 @@ namespace Biblioteca
             }
         }
 
-        private int telefono;
+        private string telefono;
 
-        public int Telefono
+        public string Telefono
         {
             get { return telefono; }
             set
             {
-                if ( value <8 || value >10)
+                if (value.Length == 9)
                 {
                     telefono = value;
                 }
@@ -118,21 +128,38 @@ namespace Biblioteca
         }
 
 
-        public ActividadEmpresa actividad { get; set; }
-        public TipoEmpresa tipo { get; set; }
 
-        public  Cliente(string rut, string razonSocial, string nombreContrato, string mailContacto, string direccion, int telefono, TipoEmpresa tipo, ActividadEmpresa actividad)
+
+
+        public int IdActividadEmpresa { get; set; }
+        public int IdTipoEmpresa { get; set; }
+
+        public void Crear()
         {
-            Rut = rut;
-            RazonSocial = razonSocial;
-            NombreContrato = nombreContrato;
-            MailContacto = mailContacto;
-            Direccion = direccion;
-            Telefono = telefono;
-            this.tipo = tipo;
-            this.actividad = actividad;
-            
+            OnBreakEntities modelo = new OnBreakEntities();
+
+            Cliente c = modelo.Cliente.Where(item => item.RutCliente == this.RutCliente).FirstOrDefault();
+
+            if (c==null)
+            {
+                Cliente nuevo = new Cliente();
+                nuevo.RutCliente = RutCliente;
+                nuevo.RazonSocial = RazonSocial;
+                nuevo.NombreContacto = NombreContacto;
+                nuevo.MailContacto = MailContacto;
+                nuevo.Direccion = Direccion;
+                nuevo.Telefono = Telefono;
+                nuevo.IdActividadEmpresa = IdActividadEmpresa;
+                nuevo.IdTipoEmpresa = IdTipoEmpresa;
+
+                modelo.Cliente.Add(nuevo);
+                modelo.SaveChanges();
+
+            }
+            else
+            {
+                throw new Exception("El Cliente ya Existe!!!");
+            }
         }
-        
     }
 }
