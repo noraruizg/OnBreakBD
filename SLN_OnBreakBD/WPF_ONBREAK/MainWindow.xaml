@@ -8,43 +8,39 @@
         Title="MainWindow" Height="650" Width="1200"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="13*"/>
-            <RowDefinition Height="49*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600*"/>
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
-
-        <Button x:Name="btn_gestContrato"  Margin="208,134.048,60.8,258" Click="Btn_gestContrato_Click" Background="#FF1AA1BF" Grid.Row="1">
+        
+        <Button x:Name="btn_gestContrato"  Margin="208,264,60.8,258" Click="Btn_gestContrato_Click" Background="#FF1AA1BF">
             <DockPanel Width="260">
                 <Image Source="Images/Contrato.png" Height="72" Width="97"/>
                 <TextBlock Text="Gestionar Contratos" LineHeight="20" Height="24" Width="159" FontSize="18"/>
             </DockPanel>
         </Button>
-        <Button x:Name="btn_gestClientes"  Margin="44.2,134.048,224.6,258" Click="Btn_gestClientes_Click" Grid.Column="1" Background="#FF38D872" Grid.Row="1">
+        <Button x:Name="btn_gestClientes"  Margin="44.2,264,224.6,258" Click="Btn_gestClientes_Click" Grid.Column="1" Background="#FF38D872">
             <DockPanel Width="260">
                 <Image Source="Images/Cliente.png" Height="72" Width="97"/>
                 <TextBlock Text="Gestionar Clientes" LineHeight="20" Height="24" Width="146" FontSize="18"/>
             </DockPanel>
         </Button>
-        <Button x:Name="btn_listContra" Margin="208,294.048,60.8,98"  Click="Btn_listContra_Click" Background="#FFEE8910" Grid.Row="1">
+        <Button x:Name="btn_listContra" Margin="208,424,60.8,98"  Click="Btn_listContra_Click" Background="#FFEE8910">
             <DockPanel Width="260">
                 <Image Source="Images/Listar contrato.png" Height="72" Width="97"/>
                 <TextBlock Text="Listar Contratos" LineHeight="20" Height="24" Width="125" FontSize="18"/>
             </DockPanel>
         </Button>
-        <Button x:Name="btn_listClientes" Margin="44.2,294.048,224.6,98"  Click="Btn_listClientes_Click" Grid.Column="1" Background="#FFD8F713" Grid.Row="1">
+        <Button x:Name="btn_listClientes" Margin="44.2,424,224.6,98"  Click="Btn_listClientes_Click" Grid.Column="1" Background="#FFD8F713">
             <DockPanel Width="260">
                 <Image Source="Images/listaar.png" Height="72" Width="97"/>
                 <TextBlock Text="Listar Clientes" LineHeight="20" Height="25" Width="122" FontSize="18"/>
             </DockPanel>
         </Button>
 
-        <Button Name="Salir" Margin="440.2,351.048,9.6,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="B_Click" Grid.Column="1" Grid.Row="1"/>
-        <Image HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="228" Source="Images/logo.png" Grid.RowSpan="2"/>
-        <Label Content="¡Bienvenido!" HorizontalAlignment="Left" Margin="458,69,0,0" VerticalAlignment="Top" Width="278" Height="81" FontSize="48" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Label Content="Selecciona Una Opción" HorizontalAlignment="Left" Margin="408,8.048,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="377" FontSize="36" Grid.Row="1"/>
+        <Button Name="Salir" Margin="440.05,481,9.6,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="B_Click" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="228" Source="Images/logo.png"/>
+        <Label Content="¡Bienvenido!" HorizontalAlignment="Left" Margin="458,69,0,0" VerticalAlignment="Top" Width="278" Height="81" FontSize="48" Grid.ColumnSpan="2"/>
+        <Label Content="Selecciona Una Opción" HorizontalAlignment="Left" Margin="408,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="377" FontSize="36"/>
     </Grid>
 </Window>

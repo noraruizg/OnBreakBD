@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_ONBREAK.AgregarContrato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_ONBREAK"
+        mc:Ignorable="d"
+        Title="AgregarContrato" Height="650" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="600*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_inicio" Margin="116,33,230.8,398" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
+            <Image Source="Images/logo.png" Height="175" Width="186"/>
+        </Button>
+        <Label x:Name="lbl_title" Content="Gestionar Contratos" HorizontalAlignment="Left" Margin="366,52,0,0" VerticalAlignment="Top" Width="461" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_subtitle" Content="Agregar Contrato" HorizontalAlignment="Left" Margin="498,113,0,0" VerticalAlignment="Top" Width="198" FontSize="24" Height="48" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="434,166,0,0" VerticalAlignment="Top" Width="325" FontSize="20" Height="37" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="817" Margin="246,326,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_sguiente" Content="Siguiente" HorizontalAlignment="Left" Margin="9.2,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Grid.Column="1" Click="Btn_sguiente_Click" IsEnabled="False" />
+        <Label Content="Fecha y Hora Inicio" HorizontalAlignment="Left" Margin="131,272,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Height="37" RenderTransformOrigin="0.379,0.557"/>
+        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Width="97" FontSize="18" Height="33"/>
+        <DatePicker x:Name="dpinicio" HorizontalAlignment="Left" Margin="322,279,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dptermino" Grid.Column="1" HorizontalAlignment="Left" Margin="322.2,279,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha y Hora Termino" HorizontalAlignment="Left" Margin="135.2,272,0,0" VerticalAlignment="Top" Width="182" FontSize="18" Height="37" Grid.Column="1"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="363,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Click="Btn_Cancelar_Click" />
+        <Label Content="Rut Cliente:" HorizontalAlignment="Left" Margin="131,367,0,0" VerticalAlignment="Top" Width="104" FontSize="18" Height="37"/>
+        <TextBox x:Name="txt_busrut" HorizontalAlignment="Left" Height="23" Margin="246,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Nombre Completo Contacto:" HorizontalAlignment="Left" Margin="437,367,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_nombre" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="95.2,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False"/>
+        <Button x:Name="btn_busrut" Margin="366,367,171,210" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_busrut_Click">
+            <Image Source="Images/buscar.png" Height="27" Width="26"/>
+        </Button>
+
+
+
+
+
+
+    </Grid>
+</Window>

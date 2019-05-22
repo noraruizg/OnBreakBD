@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0A1A1CA9-5DB2-4A0D-BAAF-4B3B80CA291D}</ProjectGuid>
+    <ProjectGuid>{C62AFD37-14C3-454A-BB48-2060DA821D55}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WPF</RootNamespace>
-    <AssemblyName>WPF</AssemblyName>
+    <RootNamespace>WPF_ONBREAK</RootNamespace>
+    <AssemblyName>WPF_ONBREAK</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,13 +55,69 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AgregarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgregarContrato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AgregarContrato2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionarContrato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListarContrato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AgregarCliente.xaml.cs">
+      <DependentUpon>AgregarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarContrato.xaml.cs">
+      <DependentUpon>AgregarContrato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarContrato2.xaml.cs">
+      <DependentUpon>AgregarContrato2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EditarCliente.xaml.cs">
+      <DependentUpon>EditarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarClientes.xaml.cs">
+      <DependentUpon>GestionarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarContrato.xaml.cs">
+      <DependentUpon>GestionarContrato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListarClientes.xaml.cs">
+      <DependentUpon>ListarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListarContrato.xaml.cs">
+      <DependentUpon>ListarContrato.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -95,13 +151,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\buscar.png" />
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{3bd25299-96dc-401c-8665-e91178b9a7cc}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Images\Cliente.png" />
     <Resource Include="Images\Contrato.png" />
-    <Resource Include="Images\listaar.png" />
     <Resource Include="Images\Listar Cliente.jpg" />
     <Resource Include="Images\Listar contrato.png" />
-    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\listaar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

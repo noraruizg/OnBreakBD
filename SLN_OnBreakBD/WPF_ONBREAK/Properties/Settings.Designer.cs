@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WPF.Properties
+namespace WPF_ONBREAK.Properties
 {
 
 
