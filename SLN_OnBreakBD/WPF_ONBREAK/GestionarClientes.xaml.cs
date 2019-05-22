@@ -25,8 +25,13 @@ namespace WPF_ONBREAK
         public GestionarClientes()
         {
             InitializeComponent();
-            dgridListClientes.ItemsSource = App.clientes.Mostrar;
-            //dgridListClientes.IsReadOnly = true;
+
+            ClienteBLL c = new ClienteBLL();
+
+            dgridListClientes.ItemsSource = c.CargarDatos();
+            dgridListClientes.IsReadOnly = true;
+            
+            
             //dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
             //dgridListClientes.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
             //dgridListClientes.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta

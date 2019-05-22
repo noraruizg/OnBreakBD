@@ -160,6 +160,33 @@ namespace BLL
             {
                 throw new Exception("El Cliente ya Existe!!!");
             }
+
+
+
+           
         }
+
+
+        public List<Cliente> CargarDatos()
+        {
+            using (OnBreakEntities bd = new OnBreakEntities())
+            {
+                IEnumerable<Cliente> lista =
+                    (from item
+                     in bd.Cliente
+                     select item);
+
+                return lista.ToList<Cliente>();
+            }
+        }
+
+
+
+
+
+           
+        
+       
+
     }
 }
