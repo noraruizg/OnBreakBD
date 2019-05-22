@@ -160,11 +160,32 @@ namespace BLL
             {
                 throw new Exception("El Cliente ya Existe!!!");
             }
-
-
-
-           
+            
         }
+
+
+        public bool BuscarRut(string rut)
+        {
+            OnBreakEntities modelo = new OnBreakEntities();
+
+            Cliente c = modelo.Cliente.Where(item => item.RutCliente == rut).FirstOrDefault();
+
+            if (c == null)
+            {
+                return false;
+            }
+            else
+            {
+                Cliente cliedit = new Cliente();
+                
+                return true;
+            }
+
+        }
+
+      
+
+
 
 
         public List<Cliente> CargarDatos()

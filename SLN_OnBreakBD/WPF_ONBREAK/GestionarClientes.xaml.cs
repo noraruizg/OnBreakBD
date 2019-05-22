@@ -92,19 +92,16 @@ namespace WPF_ONBREAK
             }
             else
             {
-                bool search = false;
-
-                foreach (var item in App.clientes.Mostrar)
-                {
-                    if (rut == item.Rut)
+                    ClienteBLL c = new ClienteBLL();
+                    if (c.BuscarRut(rut))
                     {
                         if (MessageBox.Show("Cliente Encontrado!, Desea Editar sus Datos o Eliminarlo?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
                         {
-                            search = true;
+                            
                         }
                         else
                         {
-
+                            
                             EditarCliente edcli = new EditarCliente();
                             edcli.txt_rut.Text = item.Rut;
                             edcli.txt_nombreconta.Text = item.NombreContrato;
@@ -116,30 +113,28 @@ namespace WPF_ONBREAK
                             edcli.cbx_tipo.SelectedItem = item.tipo;
                             edcli.Show();
                             this.Close();
-                            search = true;
                         }
 
                     }
-                }
-                if (search == false)
-                {
-                    //si no existe
-
-                    if (MessageBox.Show("Cliente no registrado, Desea Agregarlo?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-                    {
-
-                        //do no stuff
-                    }
                     else
                     {
-                        AgregarCliente agrcli = new AgregarCliente();
-                        rut = rut.Replace(".", "").ToUpper();
-                        agrcli.txt_rut.Text = rut;
-                        agrcli.Show();
-                        this.Close();
+                        //si no existe
 
+                        if (MessageBox.Show("Cliente no registrado, Desea Agregarlo?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                        {
+
+                            //do no stuff
+                        }
+                        else
+                        {
+                            AgregarCliente agrcli = new AgregarCliente();
+                            rut = rut.Replace(".", "").ToUpper();
+                            agrcli.txt_rut.Text = rut;
+                            agrcli.Show();
+                            this.Close();
+
+                        }
                     }
-                }
 
             }
 
