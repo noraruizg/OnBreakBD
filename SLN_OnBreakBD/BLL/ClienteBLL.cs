@@ -186,9 +186,9 @@ namespace BLL
       
 
 
+        
 
-
-        public List<Cliente> CargarDatos()
+        public List<Cliente> Listar()
         {
             using (OnBreakEntities bd = new OnBreakEntities())
             {

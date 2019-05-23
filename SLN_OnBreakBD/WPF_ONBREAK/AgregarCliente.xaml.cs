@@ -24,8 +24,8 @@ namespace WPF_ONBREAK
         public AgregarCliente()
         {
             InitializeComponent();
-            cbx_actividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
-            cbx_tipo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+            //cbx_actividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
+            //cbx_tipo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
             cbx_actividad.SelectedIndex = 0;
             cbx_tipo.SelectedIndex = 0;
         }

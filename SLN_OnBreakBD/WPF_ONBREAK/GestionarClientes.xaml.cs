@@ -28,7 +28,7 @@ namespace WPF_ONBREAK
 
             ClienteBLL c = new ClienteBLL();
 
-            dgridListClientes.ItemsSource = c.CargarDatos();
+            dgridListClientes.ItemsSource = c.Listar();
             dgridListClientes.IsReadOnly = true;
             
             
@@ -70,8 +70,6 @@ namespace WPF_ONBREAK
                     string r = rut.Substring(0, 8);
                     rut = r + "-" + d;
                 }
-
-                
             }
             else if (rut.Length == 8)
             {
@@ -95,24 +93,32 @@ namespace WPF_ONBREAK
                     ClienteBLL c = new ClienteBLL();
                     if (c.BuscarRut(rut))
                     {
+
                         if (MessageBox.Show("Cliente Encontrado!, Desea Editar sus Datos o Eliminarlo?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
                         {
                             
                         }
                         else
                         {
+                        foreach (var item in c.Listar())
+                        {
+                            if (item.RutCliente == rut)
+                            {
+                                EditarCliente edcli = new EditarCliente();
+                                edcli.txt_rut.Text = item.RutCliente;
+                                edcli.txt_nombreconta.Text = item.NombreContacto;
+                                edcli.txt_direccion.Text = item.Direccion;
+                                edcli.txt_mail.Text = item.MailContacto;
+                                edcli.txt_razon.Text = item.RazonSocial;
+                                edcli.txt_telefono.Text = item.Telefono.ToString();
+                                //edcli.cbx_actividad.SelectedItem = item.ActividadEmpresa;
+                                //edcli.cbx_tipo.SelectedItem = item.TipoEmpresa;
+                                edcli.Show();
+                                this.Close();
+                            }
+                        }
                             
-                            EditarCliente edcli = new EditarCliente();
-                            edcli.txt_rut.Text = item.Rut;
-                            edcli.txt_nombreconta.Text = item.NombreContrato;
-                            edcli.txt_direccion.Text = item.Direccion;
-                            edcli.txt_mail.Text = item.MailContacto;
-                            edcli.txt_razon.Text = item.RazonSocial;
-                            edcli.txt_telefono.Text = item.Telefono.ToString();
-                            edcli.cbx_actividad.SelectedItem = item.actividad;
-                            edcli.cbx_tipo.SelectedItem = item.tipo;
-                            edcli.Show();
-                            this.Close();
+                            
                         }
 
                     }
