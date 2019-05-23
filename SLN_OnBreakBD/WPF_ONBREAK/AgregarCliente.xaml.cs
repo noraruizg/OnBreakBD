@@ -87,7 +87,7 @@ namespace WPF_ONBREAK
                     {
                         MessageBox.Show("Detalles: Telefono incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
-                    else if (txt_telefono.Text.Trim().Length!= 9)
+                    else if (txt_telefono.Text.Trim().Length != 9)
                     {
                         MessageBox.Show("Detalles: el numero de telefono debe ser igual a 9", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
@@ -102,8 +102,27 @@ namespace WPF_ONBREAK
                         c.MailContacto = txt_mail.Text;
                         c.Telefono = txt_telefono.Text;
                         c.Direccion = txt_direccion.Text;
-                        c.IdTipoEmpresa = cbx_tipo.SelectedIndex;
-                        c.IdActividadEmpresa = cbx_actividad.SelectedIndex;
+
+                        ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
+                        foreach (var item in ae.Listar())
+                        {
+
+                            if (item.Descripcion == cbx_actividad.SelectedItem.ToString())
+                            {
+                                c.IdActividadEmpresa = item.IdActividadEmpresa;
+                                break;
+                            }
+
+                        }
+                        TipoEmpresaBLL te = new TipoEmpresaBLL();
+                        foreach (var item in te.Listar())
+                        {
+                            if (item.Descripcion == cbx_tipo.SelectedItem.ToString())
+                            {
+                                c.IdTipoEmpresa = item.IdTipoEmpresa;
+                                break;
+                            }
+                        }
 
                         c.Crear();
 

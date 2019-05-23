@@ -47,6 +47,7 @@
         <Label Content="Mail Contacto:" HorizontalAlignment="Left" Margin="0,324,0,0" VerticalAlignment="Top" Width="128" FontSize="18" Height="30" RenderTransformOrigin="-1.231,-2.348" Grid.Column="1"/>
         <Label Content="Nombre Contacto:" HorizontalAlignment="Left" Margin="0,269,0,0" VerticalAlignment="Top" Width="162" FontSize="18" Height="33" RenderTransformOrigin="-1.231,-2.348" Grid.Column="1"/>
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="164.2,419,0,0" VerticalAlignment="Top" Width="59" FontSize="18" Height="33" Grid.Column="1" RenderTransformOrigin="-1.231,-2.348"/>
+        <Label x:Name="lbl_1" Content="Label" HorizontalAlignment="Left" Margin="136,520,0,0" VerticalAlignment="Top" Width="266"/>
 
     </Grid>
 </Window>
