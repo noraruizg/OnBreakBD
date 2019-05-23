@@ -188,17 +188,39 @@ namespace BLL
 
         
 
-        public List<Cliente> Listar()
+        public List<ClienteBLL> Listar()
         {
+            List<ClienteBLL> list = new List<ClienteBLL>();
             using (OnBreakEntities bd = new OnBreakEntities())
             {
                 IEnumerable<Cliente> lista =
                     (from item
                      in bd.Cliente
-                     select item);
+                     select item).ToList<Cliente>();
 
-                return lista.ToList<Cliente>();
+                
+
+                foreach (var item in lista)
+                {
+                    ClienteBLL nuevo = new ClienteBLL();
+                    nuevo.RutCliente = item.RutCliente;
+                    nuevo.RazonSocial = item.RazonSocial;
+                    nuevo.NombreContacto = item.NombreContacto;
+                    nuevo.MailContacto = item.MailContacto;
+                    nuevo.Direccion = item.Direccion;
+                    nuevo.Telefono = item.Telefono;
+                    nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
+                    nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
+
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+
             }
+            
+
         }
 
 

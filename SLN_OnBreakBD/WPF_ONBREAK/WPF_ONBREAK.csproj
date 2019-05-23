@@ -167,10 +167,6 @@
       <Project>{d73e851a-40af-45c5-813e-2802eab677e9}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{7C85B7F2-8800-4B96-99A3-F7FCDCEE1F6D}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />

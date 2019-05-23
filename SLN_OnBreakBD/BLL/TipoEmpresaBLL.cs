@@ -27,19 +27,35 @@ namespace BLL
 
 
 
-        public List<TipoEmpresa> Listar()
+        
+        
+        public List<TipoEmpresaBLL> Listar()
         {
+            List<TipoEmpresaBLL> list = new List<TipoEmpresaBLL>();
             using (OnBreakEntities bd = new OnBreakEntities())
             {
                 IEnumerable<TipoEmpresa> lista =
                     (from item
                      in bd.TipoEmpresa
-                     select item);
+                     select item).ToList<TipoEmpresa>();
 
-                return lista.ToList<TipoEmpresa>();
+
+
+                foreach (var item in lista)
+                {
+                    TipoEmpresaBLL nuevo = new TipoEmpresaBLL();
+                    nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
+                    nuevo.Descripcion = item.Descripcion;
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+
             }
-        }
 
+
+        }
 
     }
 }

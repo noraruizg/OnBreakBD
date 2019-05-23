@@ -11,17 +11,34 @@ namespace BLL
         public int IdActividadEmpresa { get; set; }
         public string Descripcion { get; set; }
 
-        public List<ActividadEmpresa> Listar()
+
+
+        public List<ActividadEmpresaBLL> Listar()
         {
+            List<ActividadEmpresaBLL> list = new List<ActividadEmpresaBLL>();
             using (OnBreakEntities bd = new OnBreakEntities())
             {
                 IEnumerable<ActividadEmpresa> lista =
                     (from item
                      in bd.ActividadEmpresa
-                     select item);
+                     select item).ToList<ActividadEmpresa>();
 
-                return lista.ToList<ActividadEmpresa>();
+
+
+                foreach (var item in lista)
+                {
+                    ActividadEmpresaBLL nuevo = new ActividadEmpresaBLL();
+                    nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
+                    nuevo.Descripcion = item.Descripcion;
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+
             }
+
+
         }
     }
 }

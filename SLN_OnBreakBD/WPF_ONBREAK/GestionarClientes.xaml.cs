@@ -41,7 +41,7 @@ namespace WPF_ONBREAK
 
 
 
-            dgridListClientes.ItemsSource = c.Listar();
+            dgridListClientes.ItemsSource = new ClienteBLL().Listar();
             dgridListClientes.IsReadOnly = true;
 
 
