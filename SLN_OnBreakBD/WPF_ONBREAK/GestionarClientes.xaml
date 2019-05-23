@@ -18,7 +18,7 @@
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
         <Label x:Name="lbl_title" Content="Gestionar Clientes" HorizontalAlignment="Left" Margin="386,52,0,0" VerticalAlignment="Top" Width="418" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dgridListClientes" HorizontalAlignment="Left" Height="321" Margin="35,224,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2" SelectionChanged="DgridListClientes_SelectionChanged" Background="White">
+        <DataGrid x:Name="dgridListClientes" HorizontalAlignment="Left" Height="321" Margin="35,224,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2"   Background="White">
          
         </DataGrid>
         <Label x:Name="lbl_rut" Content="RUT:" HorizontalAlignment="Left" Margin="398,164,0,0" VerticalAlignment="Top" Width="59" FontSize="20" Height="37"/>

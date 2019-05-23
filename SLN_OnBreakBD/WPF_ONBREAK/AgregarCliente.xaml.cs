@@ -24,8 +24,19 @@ namespace WPF_ONBREAK
         public AgregarCliente()
         {
             InitializeComponent();
-            //cbx_actividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
-            //cbx_tipo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+
+
+            TipoEmpresaBLL te = new TipoEmpresaBLL();
+            ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
+            foreach (var item in te.Listar())
+            {
+                cbx_tipo.Items.Add(item.Descripcion);
+            }
+
+            foreach (var item in ae.Listar())
+            {
+                cbx_actividad.Items.Add(item.Descripcion);
+            }
             cbx_actividad.SelectedIndex = 0;
             cbx_tipo.SelectedIndex = 0;
         }
@@ -83,19 +94,18 @@ namespace WPF_ONBREAK
                     else
                     {
 
+                        ClienteBLL c = new ClienteBLL();
 
-                        string Rut = txt_rut.Text;
-                        string RazonSocial = txt_razon.Text;
-                        string NombreContrato = txt_nombreconta.Text;
-                        string MailContacto = txt_mail.Text;
-                        Telefono = int.Parse(txt_telefono.Text);
-                        string Direccion = txt_direccion.Text;
-                        TipoEmpresa Tipo = (TipoEmpresa)cbx_tipo.SelectedItem;
-                        ActividadEmpresa Actividad = (ActividadEmpresa)cbx_actividad.SelectedItem;
-                        Cliente cli = new Cliente(Rut, RazonSocial, NombreContrato, MailContacto, Direccion, Telefono, Tipo, Actividad);
+                        c.RutCliente = txt_rut.Text;
+                        c.RazonSocial = txt_razon.Text;
+                        c.NombreContacto = txt_nombreconta.Text;
+                        c.MailContacto = txt_mail.Text;
+                        c.Telefono = txt_telefono.Text;
+                        c.Direccion = txt_direccion.Text;
+                        c.IdTipoEmpresa = cbx_tipo.SelectedIndex;
+                        c.IdActividadEmpresa = cbx_actividad.SelectedIndex;
 
-                        App.clientes.Add(cli);
-
+                        c.Crear();
 
                         //redireccionar a ventana gestionarclientes
                         GestionarClientes gcli = new GestionarClientes();

@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActividadEmpresaBLL.cs" />
     <Compile Include="ClienteBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TipoEmpresaBLL.cs" />
     <Compile Include="validar_mail.cs" />
     <Compile Include="validar_rut.cs" />
   </ItemGroup>
