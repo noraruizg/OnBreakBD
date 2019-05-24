@@ -125,10 +125,26 @@ namespace WPF_ONBREAK
                                 edcli.txt_mail.Text = item.MailContacto;
                                 edcli.txt_razon.Text = item.RazonSocial;
                                 edcli.txt_telefono.Text = item.Telefono.ToString();
-                                //edcli.cbx_actividad.SelectedItem = item.ActividadEmpresa;
-                                //edcli.cbx_tipo.SelectedItem = item.TipoEmpresa;
+                                foreach (var ac in new ActividadEmpresaBLL().Listar())
+                                {
+                                    if (ac.IdActividadEmpresa == item.IdActividadEmpresa)
+                                    {
+                                        edcli.cbx_actividad.SelectedItem = ac.Descripcion;
+                                        break;
+                                    }
+                                }
+                                foreach (var te in new TipoEmpresaBLL().Listar())
+                                {
+                                    if (te.IdTipoEmpresa==item.IdTipoEmpresa)
+                                    {
+                                        edcli.cbx_tipo.SelectedItem = te.Descripcion;
+                                        break;
+                                    }
+                                }
+                                
                                 edcli.Show();
                                 this.Close();
+
                             }
                         }
                             

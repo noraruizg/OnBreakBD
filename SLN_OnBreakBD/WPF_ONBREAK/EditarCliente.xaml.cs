@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BLL;
 namespace WPF_ONBREAK
 {
     /// <summary>
@@ -25,8 +25,19 @@ namespace WPF_ONBREAK
         {
             
             InitializeComponent();
-            cbx_actividad.ItemsSource = Enum.GetValues(typeof(ActividadEmpresa));
-            cbx_tipo.ItemsSource = Enum.GetValues(typeof(TipoEmpresa));
+            TipoEmpresaBLL te = new TipoEmpresaBLL();
+            ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
+            foreach (var item in te.Listar())
+            {
+                cbx_tipo.Items.Add(item.Descripcion);
+            }
+
+            foreach (var item in ae.Listar())
+            {
+                cbx_actividad.Items.Add(item.Descripcion);
+            }
+            cbx_actividad.SelectedIndex = 0;
+            cbx_tipo.SelectedIndex = 0;
             Cliente c = App.clientes.Mostrar.Where(item => item.Rut == txt_rut.Text).FirstOrDefault();
             
            
