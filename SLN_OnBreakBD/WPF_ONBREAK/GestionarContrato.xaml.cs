@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Biblioteca;
+using BLL;
 
 namespace WPF_ONBREAK
 {
@@ -23,7 +23,7 @@ namespace WPF_ONBREAK
         public GestionarContrato()
         {
             InitializeComponent();
-            dgridListContratos.ItemsSource = App.contratos.Mostrar;
+            dgridListContratos.ItemsSource = new ContratoBLL().Listar();
             dgridListContratos.IsReadOnly = true;
         }
 
@@ -53,9 +53,9 @@ namespace WPF_ONBREAK
             {
                 bool search = false;
 
-                foreach (var item in App.contratos.Mostrar)
+                foreach (var item in new ContratoBLL().Listar())
                 {
-                    if (txt_nro.Text == item.NumeroContrato.ToString())
+                    if (txt_nro.Text == item.Numero.ToString())
                     {
                         if (MessageBox.Show("Detalles: Contrato Encontrado!, Desea Editar sus Parametros?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
                         {
@@ -87,6 +87,11 @@ namespace WPF_ONBREAK
                 }
 
             }
+        }
+
+        private void DgridListContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
