@@ -35,7 +35,28 @@ namespace WPF_ONBREAK
                 cbx_actividad.Items.Add(item.Descripcion);
             }           
         }
-        
+
+
+        bool darkmode = true;
+        private void btn_ventana_click(object sender, RoutedEventArgs e)
+        {
+            if (darkmode == false)
+            {
+
+                darkmode = true;
+                //fondo.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+
+                darkmode = false;
+                //fondo.Visibility = Visibility.Hidden;
+            }
+
+        }
+
+
         private void Btn_editarcli_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Confirma que desea Editar?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)

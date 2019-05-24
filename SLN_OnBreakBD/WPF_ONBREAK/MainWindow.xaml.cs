@@ -29,7 +29,25 @@ namespace WPF_ONBREAK
             InitializeComponent();
         }
 
+        bool darkmode = true;
 
+        private void btn_ventana_click(object sender, RoutedEventArgs e)
+        {
+            if (darkmode == false)
+            {
+
+                darkmode = true;
+                //fondo.Visibility = Visibility.Visible;
+
+            }
+            else
+            {
+
+                darkmode = false;
+                //fondo.Visibility = Visibility.Hidden;
+            }
+
+        }
 
         private void Btn_gestContrato_Click(object sender, RoutedEventArgs e)
         {

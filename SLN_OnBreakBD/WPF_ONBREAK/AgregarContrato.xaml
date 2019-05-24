@@ -11,6 +11,21 @@
         WindowStartupLocation="CenterScreen"
         GlowBrush="{DynamicResource AccentColorBrush}"
         ShowIconOnTitleBar="True">
+
+    <Controls:MetroWindow.RightWindowCommands>
+
+        <Controls:WindowCommands>
+            <Button Click="btn_ventana_click">
+                <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconModern Width="24" Height="24" Kind="Moon" />
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center"/>
+
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
