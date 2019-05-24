@@ -48,7 +48,8 @@ namespace WPF_ONBREAK
 
             try
             {
-
+                Boolean entero = int.TryParse(txt_telefono.Text, out int Telefono);
+                int enterito = int.Parse(txt_telefono.Text);
                 if (string.IsNullOrEmpty(txt_rut.Text))
                 {
                     MessageBox.Show("Detalles: rut no valido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -79,61 +80,57 @@ namespace WPF_ONBREAK
                 {
                     MessageBox.Show("Detalles: el numero de telefono no debe estar vacio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else
+                else if (!entero)
                 {
-                    Boolean entero = int.TryParse(txt_telefono.Text, out int Telefono);
-                    int enterito = int.Parse(txt_telefono.Text);
-                    if (!entero)
-                    {
-                        MessageBox.Show("Detalles: Telefono incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    else if (txt_telefono.Text.Trim().Length != 9)
-                    {
-                        MessageBox.Show("Detalles: el numero de telefono debe ser igual a 9", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    else
-                    {
-
-                        ClienteBLL c = new ClienteBLL();
-
-                        c.RutCliente = txt_rut.Text;
-                        c.RazonSocial = txt_razon.Text;
-                        c.NombreContacto = txt_nombreconta.Text;
-                        c.MailContacto = txt_mail.Text;
-                        c.Telefono = txt_telefono.Text;
-                        c.Direccion = txt_direccion.Text;
-
-                        ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
-                        foreach (var item in ae.Listar())
-                        {
-
-                            if (item.Descripcion == cbx_actividad.SelectedItem.ToString())
-                            {
-                                c.IdActividadEmpresa = item.IdActividadEmpresa;
-                                break;
-                            }
-
-                        }
-                        TipoEmpresaBLL te = new TipoEmpresaBLL();
-                        foreach (var item in te.Listar())
-                        {
-                            if (item.Descripcion == cbx_tipo.SelectedItem.ToString())
-                            {
-                                c.IdTipoEmpresa = item.IdTipoEmpresa;
-                                break;
-                            }
-                        }
-
-                        c.Crear();
-
-                        //redireccionar a ventana gestionarclientes
-                        GestionarClientes gcli = new GestionarClientes();
-                        gcli.dgridListClientes.Items.Refresh();
-                        gcli.Show();
-                        this.Close();
-                    }
+                    MessageBox.Show("Detalles: Telefono incorrecto", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txt_telefono.Text.Trim().Length != 9)
+                {
+                     MessageBox.Show("Detalles: el numero de telefono debe contener 9", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (enterito<0)
+                {
+                     MessageBox.Show("Detalles: El Numero de Telefono no debe Ser negativo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
+                else
+                {
+
+                    ClienteBLL c = new ClienteBLL();
+
+                    c.RutCliente = txt_rut.Text;
+                    c.RazonSocial = txt_razon.Text;
+                    c.NombreContacto = txt_nombreconta.Text;
+                    c.MailContacto = txt_mail.Text;
+                    c.Telefono = txt_telefono.Text;
+                    c.Direccion = txt_direccion.Text;
+                    foreach (var item in new ActividadEmpresaBLL().Listar())
+                    {
+                        if (item.Descripcion == cbx_actividad.SelectedItem.ToString())
+                        {
+                            c.IdActividadEmpresa = item.IdActividadEmpresa;
+                            break;
+                        }
+
+                    }
+                    foreach (var item in new TipoEmpresaBLL().Listar())
+                    {
+                        if (item.Descripcion == cbx_tipo.SelectedItem.ToString())
+                        {
+                           c.IdTipoEmpresa = item.IdTipoEmpresa;
+                           break;
+                        }
+                    }
+
+                    c.Crear();
+                    //redireccionar a ventana gestionarclientes
+                    GestionarClientes gcli = new GestionarClientes();
+                    gcli.dgridListClientes.Items.Refresh();
+                    gcli.Show();
+                    this.Close();
+                }
+
+                
             }
             catch (FormatException ex)
             {
