@@ -127,10 +127,6 @@ namespace BLL
             }
         }
 
-
-
-
-
         public int IdActividadEmpresa { get; set; }
         public int IdTipoEmpresa { get; set; }
 
@@ -160,9 +156,7 @@ namespace BLL
             {
                 throw new Exception("El Cliente ya Existe!!!");
             }
-            
         }
-
 
         public bool BuscarRut(string rut)
         {
@@ -180,9 +174,7 @@ namespace BLL
                 
                 return true;
             }
-
         }
-
 
         public ClienteBLL DatosClienteporRut(string rut) {
 
@@ -206,13 +198,7 @@ namespace BLL
             else {
                 throw new Exception("Cliente no encontrado o no Existe!!");
             }
-
-
-
-            
         }
-
-        
 
         public List<ClienteBLL> Listar()
         {
@@ -223,8 +209,6 @@ namespace BLL
                     (from item
                      in bd.Cliente
                      select item).ToList<Cliente>();
-
-                
 
                 foreach (var item in lista)
                 {
@@ -238,24 +222,36 @@ namespace BLL
                     nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
                     nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
 
-
                     list.Add(nuevo);
                 }
-
                 return list;
-
             }
-            
-
         }
 
+        public void Update(ClienteBLL cl)
+        {
+            
+                OnBreakEntities modelo = new OnBreakEntities();
+                Cliente c = (from item in modelo.Cliente
+                             where item.RutCliente == cl.RutCliente
+                             select item).FirstOrDefault();
+
+            c.RutCliente = cl.RutCliente;
+            c.RazonSocial = cl.RazonSocial;
+            c.NombreContacto = cl.NombreContacto;
+            c.MailContacto = cl.MailContacto;
+            c.Direccion = cl.Direccion;
+            c.Telefono = cl.Telefono;
+            c.IdActividadEmpresa = cl.IdActividadEmpresa;
+            c.IdTipoEmpresa = cl.IdTipoEmpresa;
+
+            modelo.SaveChanges();
 
 
-
-
-           
+            
+            
+                
+        }
         
-       
-
     }
 }

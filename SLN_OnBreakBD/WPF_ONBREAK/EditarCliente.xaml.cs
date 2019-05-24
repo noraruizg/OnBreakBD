@@ -125,7 +125,7 @@ namespace WPF_ONBREAK
                             }
                         }
 
-
+                        c.Update(c);
 
 
                         
