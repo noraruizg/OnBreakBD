@@ -231,8 +231,8 @@ namespace BLL
         public void Update(ClienteBLL cl)
         {
             
-                OnBreakEntities modelo = new OnBreakEntities();
-                Cliente c = (from item in modelo.Cliente
+            OnBreakEntities modelo = new OnBreakEntities();
+            Cliente c = (from item in modelo.Cliente
                              where item.RutCliente == cl.RutCliente
                              select item).FirstOrDefault();
 
@@ -246,12 +246,23 @@ namespace BLL
             c.IdTipoEmpresa = cl.IdTipoEmpresa;
 
             modelo.SaveChanges();
-
-
-            
-            
-                
+           
         }
-        
+
+        public void Delete(string rut)
+        {
+
+            OnBreakEntities modelo = new OnBreakEntities();
+            Cliente c = (from item in modelo.Cliente
+                         where item.RutCliente == rut
+                         select item).FirstOrDefault();
+
+
+            modelo.Cliente.Remove(c);
+            modelo.SaveChanges();
+
+        }
+
+
     }
 }

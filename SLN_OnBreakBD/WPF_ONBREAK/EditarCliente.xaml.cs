@@ -25,14 +25,12 @@ namespace WPF_ONBREAK
         {
             
             InitializeComponent();
-            TipoEmpresaBLL te = new TipoEmpresaBLL();
-            ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
-            foreach (var item in te.Listar())
+            foreach (var item in new TipoEmpresaBLL().Listar())
             {
                 cbx_tipo.Items.Add(item.Descripcion);
             }
 
-            foreach (var item in ae.Listar())
+            foreach (var item in new ActividadEmpresaBLL().Listar())
             {
                 cbx_actividad.Items.Add(item.Descripcion);
             }           
@@ -150,20 +148,27 @@ namespace WPF_ONBREAK
 
         private void Btn_eliminacli_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Acaba de Seleccionar Eliminar cliente, está seguro que desea Eliminarlo?", "Peligro", MessageBoxButton.YesNo, MessageBoxImage.Stop) == MessageBoxResult.No)
+            try
             {
-                //do no stuff
+                if (MessageBox.Show("Acaba de Seleccionar Eliminar cliente, está seguro que desea Eliminarlo?", "Peligro", MessageBoxButton.YesNo, MessageBoxImage.Stop) == MessageBoxResult.No)
+                {
+                    //do no stuff
+                }
+                else
+                {
+                    new ClienteBLL().Delete(txt_rut.Text);
+
+                    GestionarClientes gcli = new GestionarClientes();
+                    gcli.Show();
+                    this.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Cliente c = App.clientes.Mostrar.Where(item => item.Rut == txt_rut.Text).FirstOrDefault();
 
-                App.clientes.Remove(c);
-
-                GestionarClientes gcli = new GestionarClientes();
-                gcli.Show();
-                this.Close();
+                MessageBox.Show("Detalles: " + ex, "Error", MessageBoxButton.OKCancel);
             }
+            
         }
 
         private void Btn_inicio_Click(object sender, RoutedEventArgs e)
