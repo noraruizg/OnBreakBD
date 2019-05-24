@@ -257,9 +257,21 @@ namespace BLL
                          where item.RutCliente == rut
                          select item).FirstOrDefault();
 
+            Contrato con = (from item in modelo.Contrato
+                            where item.RutCliente == c.RutCliente
+                            select item).FirstOrDefault();
 
-            modelo.Cliente.Remove(c);
-            modelo.SaveChanges();
+            if (con == null)
+            {
+                modelo.Cliente.Remove(c);
+                modelo.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("No se Puede Eliminar Al cliente Porque Tiene uno o mas contratos Asociados");
+            }
+            
+            
 
         }
 
