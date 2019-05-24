@@ -1,5 +1,4 @@
-﻿using Biblioteca;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
 
 namespace WPF_ONBREAK
 {
@@ -24,14 +24,17 @@ namespace WPF_ONBREAK
         public ListarClientes()
         {
             InitializeComponent();
+            
+
             cbx_filtrarclientes.ItemsSource = Enum.GetValues(typeof(filtrarClientes));
             cbx_filtrarclientes.SelectedIndex = 0;
-            dgridListarClientes.ItemsSource = App.clientes.Mostrar;
+            dgridListarClientes.ItemsSource = new ClienteBLL().Listar();
             dgridListarClientes.IsReadOnly = true;
         }
 
         private void Btn_inicio_Click(object sender, RoutedEventArgs e)
         {
+            
             inicio.Show();
             this.Close();
         }
@@ -51,14 +54,14 @@ namespace WPF_ONBREAK
         {
             string filtro = txt_filtrarclientes.Text;
 
-            List<Cliente> clientesfiltrados = new List<Cliente>();
+            List<ClienteBLL> clientesfiltrados = new List<ClienteBLL>();
 
             switch (cbx_filtrarclientes.SelectedIndex)
             {
                 case 0:
-                    foreach (var item in App.clientes.Mostrar)
+                    foreach (var item in new ClienteBLL().Listar())
                     {
-                        if (item.tipo.ToString().ToUpper().Contains(filtro.ToUpper()))
+                        if (item.IdTipoEmpresa.ToString().ToUpper().Contains(filtro.ToUpper()))
                         {
                             clientesfiltrados.Add(item);
                         }
@@ -69,9 +72,9 @@ namespace WPF_ONBREAK
 
                     break;
                 case 1:
-                    foreach (var item in App.clientes.Mostrar)
+                    foreach (var item in new ClienteBLL().Listar())
                     {
-                        if (item.Rut.Contains(filtro))
+                        if (item.RutCliente.Contains(filtro))
                         {
                             clientesfiltrados.Add(item);
                         }
@@ -83,9 +86,9 @@ namespace WPF_ONBREAK
 
                     break;
                 case 2:
-                    foreach (var item in App.clientes.Mostrar)
+                    foreach (var item in new ClienteBLL().Listar())
                     {
-                        if (item.actividad.ToString().ToUpper().Contains(filtro.ToUpper()))
+                        if (item.IdActividadEmpresa.ToString().ToUpper().Contains(filtro.ToUpper()))
                         {
                             clientesfiltrados.Add(item);
                         }

@@ -26,31 +26,11 @@ namespace WPF_ONBREAK
         {
             InitializeComponent();
 
-            ClienteBLL c = new ClienteBLL();
-            
-            DataGrid dt = new DataGrid();
-
-            //foreach (var item in c.Listar())
-            //{
-            //    dt.Items.Add(item);
-            //}
-            //dt.Columns[0].Header = "RUT"; //Index 1 - NombreProducto
-            //dt.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
-            //dt.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta
-            //dt.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
-
-
+      
 
             dgridListClientes.ItemsSource = new ClienteBLL().Listar();
             dgridListClientes.IsReadOnly = true;
-
-
-
-            //dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
-            //dgridListClientes.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
-            //dgridListClientes.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta
-            //dgridListClientes.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
-
+            
 
         }
 
@@ -226,13 +206,7 @@ namespace WPF_ONBREAK
             }   
         }
 
-        //private void DgridListClientes_ColumnHeader(object sender, GridViewColumnHeader e)
-        //{
-        //    dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
-        //    dgridListClientes.Columns[2].Header = "Razon Social"; //Index 2 - PrecioVenta}
-        //    dgridListClientes.Columns[3].Header = "Nombre de Contacto"; //Index 2 - PrecioVenta
-        //    dgridListClientes.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
-        //}
+        
 
 
     }

@@ -4,29 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biblioteca
+namespace BLL
 {
     
-    public enum ActividadEmpresa
-    {
-        Agropescuaria,
-        Mineria,
-        Manofactura,
-        Comercio,
-        Hoteleria,
-        Alimentos,
-        Transporte,
-        Servicios
-    }
-
-    public enum TipoEmpresa
-    {
-        SPA,
-        EIRL,
-        LIMITADA,
-        SOCIEDAD_ANONIMA
-    }
-
     public enum filtrarClientes
     {
         Tipo_Empresa = 0,

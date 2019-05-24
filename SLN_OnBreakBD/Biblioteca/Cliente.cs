@@ -118,21 +118,21 @@ namespace Biblioteca
         }
 
 
-        public ActividadEmpresa actividad { get; set; }
-        public TipoEmpresa tipo { get; set; }
+        //public ActividadEmpresa actividad { get; set; }
+        //public TipoEmpresa tipo { get; set; }
 
-        public  Cliente(string rut, string razonSocial, string nombreContrato, string mailContacto, string direccion, int telefono, TipoEmpresa tipo, ActividadEmpresa actividad)
-        {
-            Rut = rut;
-            RazonSocial = razonSocial;
-            NombreContrato = nombreContrato;
-            MailContacto = mailContacto;
-            Direccion = direccion;
-            Telefono = telefono;
-            this.tipo = tipo;
-            this.actividad = actividad;
+        //public  Cliente(string rut, string razonSocial, string nombreContrato, string mailContacto, string direccion, int telefono, TipoEmpresa tipo, ActividadEmpresa actividad)
+        //{
+        //    Rut = rut;
+        //    RazonSocial = razonSocial;
+        //    NombreContrato = nombreContrato;
+        //    MailContacto = mailContacto;
+        //    Direccion = direccion;
+        //    Telefono = telefono;
+        //    this.tipo = tipo;
+        //    this.actividad = actividad;
             
-        }
+        //}
         
     }
 }

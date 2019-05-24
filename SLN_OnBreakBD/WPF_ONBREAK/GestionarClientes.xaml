@@ -18,13 +18,14 @@
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
         <Label x:Name="lbl_title" Content="Gestionar Clientes" HorizontalAlignment="Left" Margin="386,52,0,0" VerticalAlignment="Top" Width="418" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dgridListClientes" HorizontalAlignment="Left" Height="321" Margin="35,224,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2"   Background="White" SelectionChanged="DgridListClientes_SelectionChanged">
-         
+        <DataGrid x:Name="dgridListClientes" HorizontalAlignment="Left" Height="321" Margin="35,224,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2"   Background="White" SelectionChanged="DgridListClientes_SelectionChanged" Cursor="Hand">
+            
+                
         </DataGrid>
-        <Label x:Name="lbl_rut" Content="RUT:" HorizontalAlignment="Left" Margin="398,164,0,0" VerticalAlignment="Top" Width="59" FontSize="20" Height="37"/>
-        <Button x:Name="btn_buscar" Content="Buscar" HorizontalAlignment="Left" Margin="119,172,0,0" VerticalAlignment="Top" Width="89" Height="24" Grid.Column="1" Click="Btn_buscar_Click" RenderTransformOrigin="0.64,0.583"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="24" Margin="457,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Grid.ColumnSpan="2" RenderTransformOrigin="0.042,0.542" TextChanged="Txt_rut_TextChanged" />
-        <Label x:Name="lbl_subtitle" Content="Buscar Cliente" HorizontalAlignment="Left" Margin="398,122,0,0" VerticalAlignment="Top" Width="171" FontSize="20" Height="37"/>
+        <Label x:Name="lbl_rut" Content="RUT:" HorizontalAlignment="Left" Margin="379,157,0,0" VerticalAlignment="Top" Width="59" FontSize="20" Height="37" RenderTransformOrigin="0.587,0.591"/>
+        <Button x:Name="btn_buscar" Content="Buscar" HorizontalAlignment="Left" Margin="128.2,166,0,0" VerticalAlignment="Top" Width="89" Height="24" Grid.Column="1" Click="Btn_buscar_Click" RenderTransformOrigin="0.64,0.583"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="24" Margin="443,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Grid.ColumnSpan="2" RenderTransformOrigin="0.042,0.542" TextChanged="Txt_rut_TextChanged" />
+        <Label x:Name="lbl_subtitle" Content="Ingrese RUT del cliente a buscar para editar o agregar" HorizontalAlignment="Left" Margin="348,129,0,0" VerticalAlignment="Top" Width="490" FontSize="20" Height="37" Grid.ColumnSpan="2"/>
         <Button x:Name="btn_volver" Content="Volver al Menú" HorizontalAlignment="Left" Margin="552,567,0,0" VerticalAlignment="Top" Width="89" Height="31" Grid.ColumnSpan="2" Click="Btn_volver_Click"/>
     </Grid>
 </Window>

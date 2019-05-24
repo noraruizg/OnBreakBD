@@ -45,7 +45,6 @@
     <Compile Include="ClienteCollection.cs" />
     <Compile Include="Contrato.cs" />
     <Compile Include="ContratoCollection.cs" />
-    <Compile Include="Enumeracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tipo_evento.cs" />
   </ItemGroup>

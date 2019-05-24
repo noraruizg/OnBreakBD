@@ -1,5 +1,4 @@
-﻿using Biblioteca;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -134,13 +133,9 @@ namespace WPF_ONBREAK
 
 
                 }
-                catch (FormatException ex)
-                {
-                    MessageBox.Show("Detalles: Correo incorrecto" + ex, "Error", MessageBoxButton.OKCancel);
-                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Detalles: Mail de contacto incorrecto" + ex, "Error", MessageBoxButton.OKCancel);
+                    MessageBox.Show("Detalles:" + ex, "Error", MessageBoxButton.OKCancel);
                 }
                 
             }

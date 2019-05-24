@@ -139,8 +139,8 @@ namespace WPF_ONBREAK
                 string MailContacto;
                 int Telefono;
                 string Direccion;
-                TipoEmpresa Tipo;
-                ActividadEmpresa Actividad;
+                //TipoEmpresa Tipo;
+                //ActividadEmpresa Actividad;
 
                 foreach (var item in App.clientes.Mostrar)
                 {
@@ -152,13 +152,13 @@ namespace WPF_ONBREAK
                         MailContacto = item.MailContacto;
                         Telefono = item.Telefono;
                         Direccion = item.Direccion;
-                        Tipo = item.tipo;
-                        Actividad = item.actividad;
-                        Cliente cli = new Cliente(rut, RazonSocial, NombreContrato, MailContacto, Direccion, Telefono, Tipo, Actividad);
+                        //Tipo = item.tipo;
+                        //Actividad = item.actividad;
+                        //Cliente cli = new Cliente(rut, RazonSocial, NombreContrato, MailContacto, Direccion, Telefono, Tipo, Actividad);
 
-                        Contrato con = new Contrato(numcon, creacion, termino, fyhinicio, fyhtermino, direcccionc, vige, te, Observacion, cli, valotal);
+                        //Contrato con = new Contrato(numcon, creacion, termino, fyhinicio, fyhtermino, direcccionc, vige, te, Observacion, cli, valotal);
 
-                        App.contratos.Add(con);
+                        //App.contratos.Add(con);
                         //redireccionar a ventana gestionarContratos
                         GestionarContrato gcon = new GestionarContrato();
                         gcon.dgridListContratos.Items.Refresh();

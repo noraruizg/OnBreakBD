@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ActividadEmpresaBLL.cs" />
     <Compile Include="ClienteBLL.cs" />
+    <Compile Include="Enumeracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoEmpresaBLL.cs" />
     <Compile Include="validar_mail.cs" />
