@@ -13,7 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MahApps.Metro.Controls;
 namespace WPF_ONBREAK
 {
     /// <summary>
@@ -24,7 +24,7 @@ namespace WPF_ONBREAK
     // DD: Día de Creación, debe considerar que días menores a 10, deben anteponer un CERO “0”. 
     // HH: Hora de creación en formato 24 horas, debe considerar que horas menores a 10, deben anteponer un CERO “0”. 
     // mm: Minuto de creación, debe considerar que minutos menores a 10, deben anteponer un CERO “0”. 
-    public partial class AgregarContrato : Window
+    public partial class AgregarContrato : MetroWindow
     {
         public AgregarContrato()
         {

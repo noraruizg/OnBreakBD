@@ -1,12 +1,21 @@
-﻿<Window x:Class="WPF_ONBREAK.MainWindow"
+﻿<Controls:MetroWindow  x:Class="WPF_ONBREAK.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="1200"
-        WindowStartupLocation="CenterScreen">
+        Title="OnBreak | System" Height="650" Width="1200"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        ShowIconOnTitleBar="True"> 
+                       
+                       
+                       
+                       
+                       
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600*"/>
@@ -37,10 +46,8 @@
                 <TextBlock Text="Listar Clientes" LineHeight="20" Height="25" Width="122" FontSize="18"/>
             </DockPanel>
         </Button>
-
-        <Button Name="Salir" Margin="440.05,481,9.6,10" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="B_Click" Grid.Column="1"/>
         <Image HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="228" Source="Images/logo.png"/>
         <Label Content="¡Bienvenido!" HorizontalAlignment="Left" Margin="458,69,0,0" VerticalAlignment="Top" Width="278" Height="81" FontSize="48" Grid.ColumnSpan="2"/>
         <Label Content="Selecciona Una Opción" HorizontalAlignment="Left" Margin="408,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="377" FontSize="36"/>
     </Grid>
-</Window>
+</Controls:MetroWindow>

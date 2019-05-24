@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BLL;
+using MahApps.Metro.Controls;
 
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para GestionarContrato.xaml
     /// </summary>
-    public partial class GestionarContrato : Window
+    public partial class GestionarContrato : MetroWindow
     {
         public GestionarContrato()
         {

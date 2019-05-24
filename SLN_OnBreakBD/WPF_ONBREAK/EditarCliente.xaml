@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF_ONBREAK.EditarCliente"
+﻿<Controls:MetroWindow  x:Class="WPF_ONBREAK.EditarCliente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
         Title="EditarCliente" Height="650" Width="1200"
-        WindowStartupLocation="CenterScreen">
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        ShowIconOnTitleBar="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600*"/>
@@ -38,4 +42,4 @@
         <Button x:Name="btn_eliminacli" Content="Eliminar" HorizontalAlignment="Left" Margin="10.2,531,0,0" VerticalAlignment="Top" Width="221" Height="51" Grid.Column="1" Click="Btn_eliminacli_Click"/>
 
     </Grid>
-</Window>
+</Controls:MetroWindow>

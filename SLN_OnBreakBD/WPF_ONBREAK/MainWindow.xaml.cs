@@ -14,12 +14,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Biblioteca;
 using BLL;
+using MahApps.Metro.Controls;
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
 
         
@@ -57,11 +58,7 @@ namespace WPF_ONBREAK
             gcli.Show();
             this.Close();
         }
-
-        private void B_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        
     }
 
 

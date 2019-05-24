@@ -12,12 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BLL;
+using MahApps.Metro.Controls;
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para EditarCliente.xaml
     /// </summary>
-    public partial class EditarCliente : Window
+    public partial class EditarCliente : MetroWindow
     {
         
         public EditarCliente()

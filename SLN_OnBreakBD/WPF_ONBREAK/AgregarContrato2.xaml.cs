@@ -12,13 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Biblioteca;
-
+using MahApps.Metro.Controls;
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para AgregarContrato2.xaml
     /// </summary>
-    public partial class AgregarContrato2 : Window
+    public partial class AgregarContrato2 : MetroWindow
     {
         public string direcccionc;
         public string ruttt;

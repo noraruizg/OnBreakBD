@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using MahApps.Metro.Controls;
+using BLL;
 using Biblioteca;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace WPF_ONBREAK
     /// <summary>
     /// Lógica de interacción para AgregarCliente.xaml
     /// </summary>
-    public partial class AgregarCliente : Window
+    public partial class AgregarCliente : MetroWindow
     {
         public AgregarCliente()
         {

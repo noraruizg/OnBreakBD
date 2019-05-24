@@ -1,12 +1,16 @@
-﻿<Window x:Class="WPF_ONBREAK.GestionarContrato"
+﻿<Controls:MetroWindow x:Class="WPF_ONBREAK.GestionarContrato"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"              
         Title="GestionarContrato" Height="650" Width="1200"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        ShowIconOnTitleBar="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,4 +29,4 @@
 
     </Grid>
 
-</Window>
+</Controls:MetroWindow>

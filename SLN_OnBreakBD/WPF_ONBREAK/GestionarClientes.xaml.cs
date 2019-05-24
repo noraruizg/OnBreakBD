@@ -1,4 +1,4 @@
-﻿using Biblioteca;
+﻿
 using BLL;
 using System;
 using System.Collections.Generic;
@@ -13,14 +13,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MahApps.Metro.Controls;
 
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para GestionarClientes.xaml
     /// </summary>
-    public partial class GestionarClientes : Window
+    public partial class GestionarClientes : MetroWindow
     {
         public GestionarClientes()
         {

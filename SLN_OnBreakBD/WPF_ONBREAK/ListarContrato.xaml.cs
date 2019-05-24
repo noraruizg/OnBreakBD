@@ -13,13 +13,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace WPF_ONBREAK
 {
     /// <summary>
     /// Lógica de interacción para ListarContrato.xaml
     /// </summary>
-    public partial class ListarContrato : Window
+    public partial class ListarContrato : MetroWindow
     {
         public ListarContrato()
         {
