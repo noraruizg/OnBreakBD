@@ -183,8 +183,34 @@ namespace BLL
 
         }
 
-      
 
+        public ClienteBLL DatosClienteporRut(string rut) {
+
+            if (this.BuscarRut(rut))
+            {
+                OnBreakEntities modelo = new OnBreakEntities();
+                Cliente c = modelo.Cliente.Where(item => item.RutCliente == rut).FirstOrDefault();
+
+                ClienteBLL nuevo = new ClienteBLL();
+                nuevo.RutCliente = c.RutCliente;
+                nuevo.RazonSocial = c.RazonSocial;
+                nuevo.NombreContacto = c.NombreContacto;
+                nuevo.MailContacto = c.MailContacto;
+                nuevo.Direccion = c.Direccion;
+                nuevo.Telefono = c.Telefono;
+                nuevo.IdActividadEmpresa = c.IdActividadEmpresa;
+                nuevo.IdTipoEmpresa = c.IdTipoEmpresa;
+
+                return nuevo;
+            }
+            else {
+                throw new Exception("Cliente no encontrado o no Existe!!");
+            }
+
+
+
+            
+        }
 
         
 

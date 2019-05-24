@@ -36,8 +36,6 @@ namespace WPF_ONBREAK
             {
                 cbx_actividad.Items.Add(item.Descripcion);
             }
-            cbx_actividad.SelectedIndex = 0;
-            cbx_tipo.SelectedIndex = 0;
             Cliente c = App.clientes.Mostrar.Where(item => item.Rut == txt_rut.Text).FirstOrDefault();
             
            

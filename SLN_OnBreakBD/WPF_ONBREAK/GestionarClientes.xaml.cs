@@ -108,50 +108,42 @@ namespace WPF_ONBREAK
                     if (c.BuscarRut(rut))
                     {
 
-                        if (MessageBox.Show("Cliente Encontrado!, Desea Editar sus Datos o Eliminarlo?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
-                        {
-                            
-                        }
-                        else
-                        {
-                        foreach (var item in c.Listar())
-                        {
-                            if (item.RutCliente == rut)
-                            {
-                                EditarCliente edcli = new EditarCliente();
-                                edcli.txt_rut.Text = item.RutCliente;
-                                edcli.txt_nombreconta.Text = item.NombreContacto;
-                                edcli.txt_direccion.Text = item.Direccion;
-                                edcli.txt_mail.Text = item.MailContacto;
-                                edcli.txt_razon.Text = item.RazonSocial;
-                                edcli.txt_telefono.Text = item.Telefono.ToString();
-                                foreach (var ac in new ActividadEmpresaBLL().Listar())
-                                {
-                                    if (ac.IdActividadEmpresa == item.IdActividadEmpresa)
-                                    {
-                                        edcli.cbx_actividad.SelectedItem = ac.Descripcion;
-                                        break;
-                                    }
-                                }
-                                foreach (var te in new TipoEmpresaBLL().Listar())
-                                {
-                                    if (te.IdTipoEmpresa==item.IdTipoEmpresa)
-                                    {
-                                        edcli.cbx_tipo.SelectedItem = te.Descripcion;
-                                        break;
-                                    }
-                                }
-                                
-                                edcli.Show();
-                                this.Close();
-
-                            }
-                        }
-                            
-                            
-                        }
+                    if (MessageBox.Show("Cliente Encontrado!, Desea Editar sus Datos o Eliminarlo?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+                    {
 
                     }
+                    else
+                    {
+                        c = new ClienteBLL().DatosClienteporRut(rut);
+                        EditarCliente edcli = new EditarCliente();
+                        edcli.txt_rut.Text = c.RutCliente;
+                        edcli.txt_nombreconta.Text = c.NombreContacto;
+                        edcli.txt_direccion.Text = c.Direccion;
+                        edcli.txt_mail.Text = c.MailContacto;
+                        edcli.txt_razon.Text = c.RazonSocial;
+                        edcli.txt_telefono.Text = c.Telefono.ToString();
+                        foreach (var ac in new ActividadEmpresaBLL().Listar())
+                        {
+                            if (ac.IdActividadEmpresa == c.IdActividadEmpresa)
+                            {
+                                edcli.cbx_actividad.SelectedItem = ac.Descripcion;
+                                break;
+                            }
+                        }
+                        foreach (var te in new TipoEmpresaBLL().Listar())
+                        {
+                            if (te.IdTipoEmpresa == c.IdTipoEmpresa)
+                            {
+                                edcli.cbx_tipo.SelectedItem = te.Descripcion;
+                                break;
+                            }
+                        }
+                        edcli.Show();
+                        this.Close();
+
+                    }
+
+                }
                     else
                     {
                         //si no existe
@@ -189,6 +181,51 @@ namespace WPF_ONBREAK
 
         }
 
+        private void DgridListClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string rut = ((ClienteBLL)dgridListClientes.SelectedItem).RutCliente;
+            ClienteBLL c = new ClienteBLL();
+            if (c.BuscarRut(rut))
+            {
+
+                if (MessageBox.Show("Desea Editar los Datos del Cliente con RUT " + rut + " o Eliminarlo del sistema?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+                {
+
+                }
+                else
+                {
+                    c = new ClienteBLL().DatosClienteporRut(rut);
+                    EditarCliente edcli = new EditarCliente();
+                    edcli.txt_rut.Text = c.RutCliente;
+                    edcli.txt_nombreconta.Text = c.NombreContacto;
+                    edcli.txt_direccion.Text = c.Direccion;
+                    edcli.txt_mail.Text = c.MailContacto;
+                    edcli.txt_razon.Text = c.RazonSocial;
+                    edcli.txt_telefono.Text = c.Telefono.ToString();
+                    foreach (var ac in new ActividadEmpresaBLL().Listar())
+                    {
+                        if (ac.IdActividadEmpresa == c.IdActividadEmpresa)
+                        {
+                            edcli.cbx_actividad.SelectedItem = ac.Descripcion;
+                            break;
+                        }
+                    }
+                    foreach (var te in new TipoEmpresaBLL().Listar())
+                    {
+                        if (te.IdTipoEmpresa == c.IdTipoEmpresa)
+                        {
+                            edcli.cbx_tipo.SelectedItem = te.Descripcion;
+                            break;
+                        }
+                    }
+                    edcli.Show();
+                    this.Close();
+
+                }
+
+            }   
+        }
+
         //private void DgridListClientes_ColumnHeader(object sender, GridViewColumnHeader e)
         //{
         //    dgridListClientes.Columns[1].Header = "RUT"; //Index 1 - NombreProducto
@@ -197,6 +234,6 @@ namespace WPF_ONBREAK
         //    dgridListClientes.Columns[4].Header = "Mail de Contacto"; //Index 2 - PrecioVenta
         //}
 
-       
+
     }
 }
