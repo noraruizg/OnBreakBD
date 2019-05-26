@@ -31,7 +31,7 @@
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btn_inicio" Margin="116,33,248.657,416" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
-            <Image Source="Images/logo.png" Height="175" Width="186"/>
+            <Image Source="Images/logo.png" Height="161" Width="186"/>
         </Button>
         <Label x:Name="lbl_title" Content="Gestionar Clientes" HorizontalAlignment="Left" Margin="388,52,0,0" VerticalAlignment="Top" Width="418" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Label x:Name="lbl_subtitle" Content="Editar Cliente" HorizontalAlignment="Left" Margin="527,127,0,0" VerticalAlignment="Top" Width="155" FontSize="24" Height="48" Grid.ColumnSpan="2"/>

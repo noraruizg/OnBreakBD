@@ -20,4 +20,19 @@ namespace BLL
         RUT_Cliente = 1,
         Tipo_De_Contrato = 2
     }
+
+    public class Darkmode {
+
+        private bool state;
+
+        public bool State
+        {
+            get { return state; }
+            set { state = value; }
+        }
+
+        public Darkmode(bool es) {
+            State = es;
+        }
+    }
 }

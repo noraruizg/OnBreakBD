@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using BLL;
 
 namespace WPF_ONBREAK
 {
@@ -14,6 +15,14 @@ namespace WPF_ONBREAK
     /// </summary>
     public partial class App : Application
     {
+        public static Darkmode dm = new Darkmode(false);
+        
+        public static List<Darkmode> darkmode = new List<Darkmode>() {dm};
+
+
+
+
+
         public static ClienteCollection clientes = new ClienteCollection();
         public static ContratoCollection contratos = new ContratoCollection();
         public static List<Tipo_evento> eventos = new List<Tipo_evento>();
@@ -41,6 +50,7 @@ namespace WPF_ONBREAK
             eventos.Add(e3);
         }
 
+        
 
         public static void borrar()
         {

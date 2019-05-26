@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using MahApps.Metro;
+
 namespace WPF_ONBREAK
 {
     /// <summary>
@@ -28,27 +30,53 @@ namespace WPF_ONBREAK
     {
         public AgregarContrato()
         {
-            InitializeComponent();         
-           
+            InitializeComponent();
+            foreach (var item in App.darkmode)
+            {
+
+                if (item.State == true)
+                {
+                    ThemeManager.ChangeAppStyle(this,
+                                            ThemeManager.GetAccent("Violet"),
+                                            ThemeManager.GetAppTheme("BaseDark"));
+                    //fondo.Visibility = Visibility.Visible;
+                    break;
+                }
+                else
+                {
+                    ThemeManager.ChangeAppStyle(this,
+                                            ThemeManager.GetAccent("Teal"),
+                                            ThemeManager.GetAppTheme("BaseLight"));
+                    //fondo.Visibility = Visibility.Hidden;
+                    break;
+                }
+            }
         }
 
-        bool darkmode = true;
         private void btn_ventana_click(object sender, RoutedEventArgs e)
         {
-            if (darkmode == false)
+            foreach (var item in App.darkmode)
             {
 
-                darkmode = true;
-                //fondo.Visibility = Visibility.Visible;
-
+                if (item.State == false)
+                {
+                    ThemeManager.ChangeAppStyle(this,
+                                            ThemeManager.GetAccent("Violet"),
+                                            ThemeManager.GetAppTheme("BaseDark"));
+                    //fondo.Visibility = Visibility.Visible;
+                    item.State = true;
+                    break;
+                }
+                else
+                {
+                    ThemeManager.ChangeAppStyle(this,
+                                            ThemeManager.GetAccent("Teal"),
+                                            ThemeManager.GetAppTheme("BaseLight"));
+                    //fondo.Visibility = Visibility.Hidden;
+                    item.State = false;
+                    break;
+                }
             }
-            else
-            {
-
-                darkmode = false;
-                //fondo.Visibility = Visibility.Hidden;
-            }
-
         }
         private void Btn_inicio_Click(object sender, RoutedEventArgs e)
         {
