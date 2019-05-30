@@ -1,4 +1,4 @@
-﻿using Biblioteca;
+﻿
 using BLL;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace WPF_ONBREAK
             InitializeComponent();
             cbx_filtrarcontratos.ItemsSource = Enum.GetValues(typeof(filtrarContratos));
             cbx_filtrarcontratos.SelectedIndex = 0;
-            dgridListarContratos.ItemsSource = App.contratos.Mostrar;
+            dgridListarContratos.ItemsSource = new ContratoBLL().Listar();
             dgridListarContratos.IsReadOnly = true;
 
             foreach (var item in App.darkmode)
@@ -99,7 +99,7 @@ namespace WPF_ONBREAK
 
         private void Txt_filtrarcontratos_TextChanged(object sender, TextChangedEventArgs e)
         {
-            List<Contrato> contratosfiltrados = new List<Contrato>();
+            List<ContratoBLL> contratosfiltrados = new List<ContratoBLL>();
 
             string filtro = txt_filtrarcontratos.Text;
 
@@ -107,9 +107,9 @@ namespace WPF_ONBREAK
             {
                 case 0:
                     //filtrar por nro de contrato
-                    foreach (var item in App.contratos.Mostrar)
+                    foreach (var item in new ContratoBLL().Listar())
                     {
-                        if (item.NumeroContrato.ToString().Contains(filtro))
+                        if (item.Numero.ToString().Contains(filtro))
                         {
                             contratosfiltrados.Add(item);
                         }
@@ -121,9 +121,9 @@ namespace WPF_ONBREAK
                     break;
                 case 1:
                     // por rut de cliente
-                    foreach (var item in App.contratos.Mostrar)
+                    foreach (var item in new ContratoBLL().Listar())
                     {
-                        if (item.NumeroContrato.ToString().Contains(filtro))
+                        if (item.RutCliente.ToString().Contains(filtro))
                         {
                             contratosfiltrados.Add(item);
                         }
@@ -136,9 +136,23 @@ namespace WPF_ONBREAK
                     break;
                 case 2:
                     //filtrar por tipo de contrato...
-                    foreach (var item in App.contratos.Mostrar)
+                    foreach (var item in new ContratoBLL().Listar())
                     {
-                        if (item.Tipo.ToString().ToUpper().Contains(filtro.ToUpper()))
+                        if (item.IdTipoEvento.ToString().ToUpper().Contains(filtro.ToUpper()))
+                        {
+                            contratosfiltrados.Add(item);
+                        }
+                    }
+                    dgridListarContratos.ItemsSource = contratosfiltrados;
+                    dgridListarContratos.Items.Refresh();
+
+
+                    break;
+                case 3:
+                    //filtrar por tipo de contrato...
+                    foreach (var item in new ContratoBLL().Listar())
+                    {
+                        if (item.IdModalidad.ToString().ToUpper().Contains(filtro.ToUpper()))
                         {
                             contratosfiltrados.Add(item);
                         }

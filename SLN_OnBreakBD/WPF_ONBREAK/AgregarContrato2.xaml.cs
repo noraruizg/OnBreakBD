@@ -11,9 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Biblioteca;
+using BLL;
 using MahApps.Metro;
 using MahApps.Metro.Controls;
+
 namespace WPF_ONBREAK
 {
     /// <summary>
@@ -28,13 +29,10 @@ namespace WPF_ONBREAK
         public string nomcon;
         public AgregarContrato2()
         {
-            App.cargareventos();
             InitializeComponent();
-            dgrid_eventos.ItemsSource = App.eventos ;
             dgrid_eventos.IsReadOnly = true;
-            txt_personalAdicional.Text = "0";
-            txt_asistentes.Text = "0";
-            txt_valorbase.Text = "0";
+            dgrid_ModServicio.IsEnabled = false;
+            dgrid_ModServicio.IsReadOnly = true;
 
 
             foreach (var item in App.darkmode)
@@ -98,7 +96,6 @@ namespace WPF_ONBREAK
         {
 
             MainWindow inicio = new MainWindow();
-            App.borrar();
             inicio.Show();
             this.Close();
         }
@@ -110,17 +107,9 @@ namespace WPF_ONBREAK
             {
                 MessageBox.Show("Observacion no puede ser vacia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (string.IsNullOrEmpty(txt_nombree.Text))
-            {
-                MessageBox.Show("Nombre de evento no puede estar vacio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
             else if (string.IsNullOrEmpty(txt_personal.Text))
             {
                 MessageBox.Show("Personal base no puede estar vacio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (string.IsNullOrEmpty(txt_valorbase.Text))
-            {
-                MessageBox.Show("Valor base  no puede estar vacio", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (int.Parse(txt_asistentes.Text) <1 || string.IsNullOrEmpty(txt_asistentes.Text))
             {
@@ -129,10 +118,6 @@ namespace WPF_ONBREAK
             else if (int.Parse(txt_personalAdicional.Text) <1 || string.IsNullOrEmpty(txt_personalAdicional.Text))
             {
                 MessageBox.Show("Personal adicional debe ser mayor a 0", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (string.IsNullOrEmpty(txt_ide.Text))
-            {
-                MessageBox.Show("Completa los campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -159,82 +144,49 @@ namespace WPF_ONBREAK
                 {
                     min = "0" + min;
                 }
-                string numcon = agnos + mes + dia + hora + min;
 
-                DateTime creacion = DateTime.Now.Date;
-                DateTime termino = fyhtermino.Date;
-                bool vige = true;
+                ContratoBLL con = new ContratoBLL();
+                
+                con.Numero = agnos + mes + dia + hora + min;
 
-                Tipo_evento te = new Tipo_evento();
-                te.ID = int.Parse(txt_ide.Text);
-                te.Nombre = txt_nombree.Text;
-                te.PersonalBase = int.Parse(txt_personal.Text);
-                te.ValorBase = int.Parse(txt_valorbase.Text);
+                con.Creacion = DateTime.Now.Date;
+                con.Termino = fyhtermino.Date;
+                con.RutCliente = txt_rut.Text;
+                con.IdModalidad = txt_nombree.Text;
+                con.IdTipoEvento = int.Parse(txt_ide.Text);
+                con.FechaHoraInicio = fyhinicio;
+                con.FechaHoraTermino = fyhtermino;
+                con.Asistentes = int.Parse(txt_asistentes.Text);
+                con.PersonalAdicional = int.Parse(txt_personalAdicional.Text);
+                con.Realizado = false;
+                con.Observaciones = txt_observacion.Text;
 
-                string Observacion = txt_observacion.Text;
+                //con.ValorTotalContrato =
 
-                string vtotal = txt_vtotal.Text;
-                vtotal = vtotal.Replace("UF", "").ToUpper();
-                double valor = 0;
-                double.TryParse(vtotal, out valor);
-                double valotal = valor;
-
-                string rut;
-                string RazonSocial;
-                string NombreContrato;
-                string MailContacto;
-                int Telefono;
-                string Direccion;
-                //TipoEmpresa Tipo;
-                //ActividadEmpresa Actividad;
-
-                foreach (var item in App.clientes.Mostrar)
-                {
-                    if (item.Rut == txt_rut.Text)
-                    {
-                        rut = item.Rut;
-                        RazonSocial = item.RazonSocial;
-                        NombreContrato = item.NombreContrato;
-                        MailContacto = item.MailContacto;
-                        Telefono = item.Telefono;
-                        Direccion = item.Direccion;
-                        //Tipo = item.tipo;
-                        //Actividad = item.actividad;
-                        //Cliente cli = new Cliente(rut, RazonSocial, NombreContrato, MailContacto, Direccion, Telefono, Tipo, Actividad);
-
-                        //Contrato con = new Contrato(numcon, creacion, termino, fyhinicio, fyhtermino, direcccionc, vige, te, Observacion, cli, valotal);
-
-                        //App.contratos.Add(con);
-                        //redireccionar a ventana gestionarContratos
-                        GestionarContrato gcon = new GestionarContrato();
-                        gcon.dgridListContratos.Items.Refresh();
-                        gcon.Show();
-                        this.Close();
-
-
-                    }
-                }
-
-
-
-
-
-
-
+                //con.Crear();
             }
         }
 
         private void Dgrid_eventos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            txt_nombree.Text = ((Tipo_evento)dgrid_eventos.SelectedItem).Nombre;
-            txt_valorbase.Text = ((Tipo_evento)dgrid_eventos.SelectedItem).ValorBase.ToString();
-            txt_personal.Text = ((Tipo_evento)dgrid_eventos.SelectedItem).PersonalBase.ToString();
-            txt_ide.Text = ((Tipo_evento)dgrid_eventos.SelectedItem).ID.ToString();
+            
+            
+            txt_ide.Text = ((TipoEventoBLL)dgrid_eventos.SelectedItem).IdTipoEvento.ToString();
             txt_personalAdicional.Text = "0";
             txt_asistentes.Text = "0";
+            dgrid_ModServicio.ItemsSource = new ModalidadServicioBLL().Listar(((TipoEventoBLL)dgrid_eventos.SelectedItem).IdTipoEvento);
+            dgrid_ModServicio.IsEnabled = true;
         }
 
-        
+        private void Dgrid_ModServicio_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txt_nombree.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).IdModalidad;
+            txt_valorbase.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).ValorBase.ToString();
+            txt_personal.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).PersonalBase.ToString();
+            txt_asistentes.IsEnabled = true;
+            txt_personalAdicional.IsEnabled = true;
+        }
+
 
         private void Txt_valorbase_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -369,5 +321,7 @@ namespace WPF_ONBREAK
 
             btn_sguiente.IsEnabled = true;
         }
+
+        
     }
 }

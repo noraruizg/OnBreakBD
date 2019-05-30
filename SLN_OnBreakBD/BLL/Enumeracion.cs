@@ -18,7 +18,8 @@ namespace BLL
     {
         Nro_Contrato = 0,
         RUT_Cliente = 1,
-        Tipo_De_Contrato = 2
+        Tipo_De_Evento = 2,
+        Modalidad_De_Evento = 3
     }
 
     public class Darkmode {

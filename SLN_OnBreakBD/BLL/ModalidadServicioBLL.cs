@@ -17,7 +17,7 @@ namespace BLL
 
 
 
-        public List<ModalidadServicioBLL> Listar()
+        public List<ModalidadServicioBLL> Listar(int id)
         {
             List<ModalidadServicioBLL> list = new List<ModalidadServicioBLL>();
             using (OnBreakEntities bd = new OnBreakEntities())
@@ -25,6 +25,7 @@ namespace BLL
                 IEnumerable<ModalidadServicio> lista =
                     (from item
                      in bd.ModalidadServicio
+                     where item.IdTipoEvento == id
                      select item).ToList<ModalidadServicio>();
 
 
@@ -33,7 +34,7 @@ namespace BLL
                 {
                     ModalidadServicioBLL nuevo = new ModalidadServicioBLL();
                     nuevo.IdModalidad = item.IdModalidad;
-                    nuevo.IdTipoEvento = IdTipoEvento;
+                    nuevo.IdTipoEvento = item.IdTipoEvento;
                     nuevo.Nombre = item.Nombre;
                     nuevo.ValorBase = item.ValorBase;
                     nuevo.PersonalBase = item.PersonalBase;

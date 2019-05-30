@@ -192,7 +192,7 @@ namespace WPF_ONBREAK
                         agrc2.fyhinicio = dpinicio.SelectedDate.Value;
                         agrc2.fyhtermino = dptermino.SelectedDate.Value;
                         agrc2.txt_nombrecontacto.Text = txt_nombre.Text;
-                        agrc2.dgrid_eventos.ItemsSource = App.eventos;
+                        agrc2.dgrid_eventos.ItemsSource = new TipoEventoBLL().Listar();
                         agrc2.dgrid_eventos.Items.Refresh();
                         agrc2.Show();
                         this.Close();
