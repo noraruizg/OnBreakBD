@@ -26,16 +26,13 @@ namespace WPF_ONBREAK
         public AgregarCliente()
         {
             InitializeComponent();
-
-
-            TipoEmpresaBLL te = new TipoEmpresaBLL();
-            ActividadEmpresaBLL ae = new ActividadEmpresaBLL();
-            foreach (var item in te.Listar())
+            
+            foreach (var item in new TipoEmpresaBLL().Listar())
             {
                 cbx_tipo.Items.Add(item.Descripcion);
             }
 
-            foreach (var item in ae.Listar())
+            foreach (var item in new ActividadEmpresaBLL().Listar())
             {
                 cbx_actividad.Items.Add(item.Descripcion);
             }

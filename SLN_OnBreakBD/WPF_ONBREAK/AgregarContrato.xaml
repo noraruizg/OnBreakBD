@@ -8,14 +8,15 @@
         Title="AgregarContrato" Height="650" Width="1200"
          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        WindowStartupLocation="CenterScreen"
+                      xmlns:wpfx="http://metro.mahapps.com/winfx/xaml/controls"
+                      WindowStartupLocation="CenterScreen"
         GlowBrush="{DynamicResource AccentColorBrush}"
         ShowIconOnTitleBar="True">
 
     <Controls:MetroWindow.RightWindowCommands>
 
         <Controls:WindowCommands>
-            <Button Click="btn_ventana_click">
+            <Button Click="Btn_ventana_click">
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconModern Width="24" Height="24" Kind="Moon" />
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center"/>
@@ -40,22 +41,23 @@
         <Label x:Name="lbl_title" Content="Gestionar Contratos" HorizontalAlignment="Left" Margin="366,52,0,0" VerticalAlignment="Top" Width="461" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <Label x:Name="lbl_subtitle" Content="Agregar Contrato" HorizontalAlignment="Left" Margin="498,113,0,0" VerticalAlignment="Top" Width="198" FontSize="24" Height="48" Grid.ColumnSpan="2"/>
         <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="434,166,0,0" VerticalAlignment="Top" Width="325" FontSize="20" Height="37" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="817" Margin="246,326,0,0" Grid.ColumnSpan="2"/>
         <Button x:Name="btn_sguiente" Content="Siguiente" HorizontalAlignment="Left" Margin="9.2,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Grid.Column="1" Click="Btn_sguiente_Click" IsEnabled="False" />
-        <Label Content="Fecha y Hora Inicio" HorizontalAlignment="Left" Margin="131,272,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Height="37" RenderTransformOrigin="0.379,0.557"/>
-        <Label Content="Dirección:" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Width="97" FontSize="18" Height="33"/>
-        <DatePicker x:Name="dpinicio" HorizontalAlignment="Left" Margin="322,279,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dptermino" Grid.Column="1" HorizontalAlignment="Left" Margin="322.2,279,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha y Hora Termino" HorizontalAlignment="Left" Margin="135.2,272,0,0" VerticalAlignment="Top" Width="182" FontSize="18" Height="37" Grid.Column="1"/>
+        <Label Content="Fecha y Hora Inicio" HorizontalAlignment="Left" Margin="131,471,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Height="37" RenderTransformOrigin="0.379,0.557"/>
+
+        <wpfx:DateTimePicker x:Name="dpinicio" Grid.Column="0" HorizontalAlignment="Left" Margin="301,475,0,0" VerticalAlignment="Top" Width="250" wpfx:TextBoxHelper.Watermark="Selecciona Fecha y Hora" />
+        <wpfx:DateTimePicker x:Name="dptermino" Grid.Column="1" HorizontalAlignment="Left" Margin="216.2,471,0,0"  VerticalAlignment="Top" Width="250" FirstDayOfWeek="Monday" wpfx:TextBoxHelper.Watermark="Selecciona Fecha y Hora" />
+
+        <Label Content="Fecha y Hora Termino" HorizontalAlignment="Left" Margin="29.2,464,0,0" VerticalAlignment="Top" Width="182" FontSize="18" Height="37" Grid.Column="1"/>
         <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="363,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Click="Btn_Cancelar_Click" />
-        <Label Content="Rut Cliente:" HorizontalAlignment="Left" Margin="131,367,0,0" VerticalAlignment="Top" Width="104" FontSize="18" Height="37"/>
-        <TextBox x:Name="txt_busrut" HorizontalAlignment="Left" Height="23" Margin="246,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <Label Content="Nombre Completo Contacto:" HorizontalAlignment="Left" Margin="437,367,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_nombre" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="95.2,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False"/>
-        <Button x:Name="btn_busrut" Margin="366,367,171,210" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_busrut_Click">
+        <Label Content="Rut Cliente:" HorizontalAlignment="Left" Margin="449,228,0,0" VerticalAlignment="Top" Width="104" FontSize="18" Height="37"/>
+        <TextBox x:Name="txt_busrut" HorizontalAlignment="Left" Height="23" Margin="564,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2"/>
+        <Label Content="Nombre Completo Contacto:" HorizontalAlignment="Left" Margin="285,308,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37"/>
+        <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="540,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <Button x:Name="btn_busrut" Margin="87.2,228,449.6,349" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_busrut_Click" Grid.Column="1">
             <Image Source="Images/buscar.png" Height="27" Width="26"/>
         </Button>
-
+        <Label Content="Razón Social del Cliente:" HorizontalAlignment="Left" Margin="285,345,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37"/>
+        <TextBox x:Name="txt_rsocial" HorizontalAlignment="Left" Height="23" Margin="540,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False" Grid.ColumnSpan="2"/>
 
 
 
