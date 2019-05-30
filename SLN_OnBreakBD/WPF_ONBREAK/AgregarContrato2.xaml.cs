@@ -148,8 +148,11 @@ namespace WPF_ONBREAK
                 
                 con.Numero = agnos + mes + dia + hora + min;
 
-                con.Creacion = DateTime.Now.Date;
-                con.Termino = fyhtermino.Date;
+                DateTime hoy = DateTime.Now.Date;
+                string hoyy = hoy.ToString("yyyy/MM/dd hh:mm");
+
+                con.Creacion = Convert.ToDateTime(hoyy);
+                con.Termino = fyhtermino;
                 con.RutCliente = txt_rut.Text;
                 con.IdModalidad = txt_nombree.Text;
                 con.IdTipoEvento = int.Parse(txt_ide.Text);
@@ -163,6 +166,16 @@ namespace WPF_ONBREAK
                 con.ValorTotalContrato = double.Parse(txt_vtotal.Text.Trim().Remove(txt_vtotal.Text.Length-2,2));
 
                 con.Crear();
+
+
+
+                //redireccionar a ventana gestionarcontratos
+                GestionarContrato gcli = new GestionarContrato();
+                gcli.dgridListContratos.Items.Refresh();
+                gcli.Show();
+                this.Close();
+
+
             }
         }
 

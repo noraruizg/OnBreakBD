@@ -44,7 +44,7 @@
         <Button x:Name="btn_sguiente" Content="Siguiente" HorizontalAlignment="Left" Margin="9.2,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Grid.Column="1" Click="Btn_sguiente_Click" IsEnabled="False" />
         <Label Content="Fecha y Hora Inicio" HorizontalAlignment="Left" Margin="131,265,0,0" VerticalAlignment="Top" Width="165" FontSize="18" Height="37" RenderTransformOrigin="0.379,0.557"/>
 
-        <wpfx:DateTimePicker x:Name="dpinicio" Grid.Column="0" HorizontalAlignment="Left" Margin="301,269,0,0" VerticalAlignment="Top" Width="250" wpfx:TextBoxHelper.Watermark="Selecciona Fecha y Hora" />
+        <wpfx:DateTimePicker x:Name="dpinicio" Grid.Column="0" HorizontalAlignment="Left" Margin="301,269,0,0" VerticalAlignment="Top" Width="250" wpfx:TextBoxHelper.Watermark="Selecciona Fecha y Hora" FirstDayOfWeek="Monday" wpfx:TextBoxHelper.AutoWatermark="True" />
         <wpfx:DateTimePicker x:Name="dptermino" Grid.Column="1" HorizontalAlignment="Left" Margin="216.2,265,0,0"  VerticalAlignment="Top" Width="250" FirstDayOfWeek="Monday" wpfx:TextBoxHelper.Watermark="Selecciona Fecha y Hora" />
 
         <Label Content="Fecha y Hora Termino" HorizontalAlignment="Left" Margin="29.2,258,0,0" VerticalAlignment="Top" Width="182" FontSize="18" Height="37" Grid.Column="1"/>

@@ -52,6 +52,8 @@ namespace WPF_ONBREAK
                 }
             }
             
+
+            
         }
 
         private void Btn_ventana_click(object sender, RoutedEventArgs e)
@@ -187,8 +189,12 @@ namespace WPF_ONBREAK
                     {
                         AgregarContrato2 agrc2 = new AgregarContrato2();
                         agrc2.txt_rut.Text = rut2;
-                        agrc2.fyhinicio = dpinicio.SelectedDate.Value;
-                        agrc2.fyhtermino = dptermino.SelectedDate.Value;
+                        DateTime fini = dpinicio.SelectedDate.Value;
+                        string ini = fini.ToString("yyyy/MM/dd hh:mm");
+                        DateTime fter = dptermino.SelectedDate.Value;
+                        string ter = fter.ToString("yyyy/MM/dd hh:mm");
+                        agrc2.fyhinicio = Convert.ToDateTime(ini);
+                        agrc2.fyhtermino = Convert.ToDateTime(ter);
                         agrc2.txt_nombrecontacto.Text = txt_nombre.Text;
                         agrc2.dgrid_eventos.ItemsSource = new TipoEventoBLL().Listar();
                         agrc2.dgrid_eventos.Items.Refresh();

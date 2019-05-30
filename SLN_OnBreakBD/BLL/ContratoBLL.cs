@@ -33,6 +33,8 @@ namespace BLL
             if (c == null)
             {
                 Contrato nuevo = new Contrato();
+                
+                DateTime asd= DateTime.Now.Date;
                 nuevo.Numero = Numero;
                 nuevo.Creacion = Creacion;
                 nuevo.Termino = Termino;
@@ -40,6 +42,7 @@ namespace BLL
                 nuevo.IdModalidad = IdModalidad;
                 nuevo.IdTipoEvento = IdTipoEvento;
                 nuevo.FechaHoraInicio = FechaHoraInicio;
+                nuevo.FechaHoraTermino = FechaHoraTermino;
                 nuevo.Asistentes = Asistentes;
                 nuevo.PersonalAdicional = PersonalAdicional;
                 nuevo.Realizado = Realizado;
