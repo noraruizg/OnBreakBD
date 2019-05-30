@@ -104,7 +104,7 @@ namespace WPF_ONBREAK
             //verificar que los campos no esten vacios
             if (string.IsNullOrEmpty(txt_observacion.Text))
             {
-                MessageBox.Show("Observacion no puede ser vacia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("El campo observacion no puede estar vacia", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else if (string.IsNullOrEmpty(txt_personal.Text))
             {

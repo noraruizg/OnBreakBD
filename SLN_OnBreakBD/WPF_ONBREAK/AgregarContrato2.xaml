@@ -34,7 +34,7 @@
             <ColumnDefinition Width="600*"/>
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_inicio" Margin="116,33,230.8,398" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
+        <Button x:Name="btn_inicio" Margin="46,14,300.8,417" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
         <Label x:Name="lbl_title" Content="Gestionar Contratos" HorizontalAlignment="Left" Margin="366,52,0,0" VerticalAlignment="Top" Width="461" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
@@ -64,5 +64,8 @@
         <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="92" Margin="573,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Grid.ColumnSpan="2" IsEnabled="False"/>
         <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="448,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="607" Grid.ColumnSpan="2" IsEnabled="False"/>
         <DataGrid x:Name="dgrid_ModServicio" HorizontalAlignment="Left" Height="260" Margin="335.2,254,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="Dgrid_ModServicio_SelectionChanged" Grid.Column="1"/>
+        <Label x:Name="lbl_subtitle_2_Copy" Content="Seleccione un Tipo de Evento" HorizontalAlignment="Left" Margin="46,217,0,0" VerticalAlignment="Top" Width="194" FontSize="14" Height="37"/>
+        <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="335.2,217,0,0" VerticalAlignment="Top" Width="239" FontSize="14" Height="37" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="170" Margin="360.2,33,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
     </Grid>
 </Controls:MetroWindow>

@@ -59,6 +59,7 @@
         <Label Content="Razón Social del Cliente:" HorizontalAlignment="Left" Margin="285,457,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37"/>
         <TextBox x:Name="txt_rsocial" HorizontalAlignment="Left" Height="23" Margin="540,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False" Grid.ColumnSpan="2"/>
         <Label x:Name="lbl_subtitle_2_Copy" Content="Ingrese RUT a Buscar" HorizontalAlignment="Left" Margin="509,312,0,0" VerticalAlignment="Top" Width="176" FontSize="18" Height="37" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="170" Margin="317.2,52,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
 
 
 
