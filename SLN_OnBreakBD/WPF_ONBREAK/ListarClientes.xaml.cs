@@ -106,53 +106,42 @@ namespace WPF_ONBREAK
         {
             string filtro = txt_filtrarclientes.Text;
 
-            List<ClienteBLL> clientesfiltrados = new List<ClienteBLL>();
+            
 
             switch (cbx_filtrarclientes.SelectedIndex)
             {
                 case 0:
-                    foreach (var item in new ClienteBLL().Listar())
-                    {
-                        if (item.IdTipoEmpresa.ToString().ToUpper().Contains(filtro.ToUpper()))
-                        {
-                            clientesfiltrados.Add(item);
-                        }
-                    }
-                    dgridListarClientes.ItemsSource = clientesfiltrados;
+
+                    dgridListarClientes.ItemsSource = new ClienteBLL().FiltroporTipoEmpresa(filtro);
                     dgridListarClientes.Items.Refresh();
 
 
                     break;
                 case 1:
-                    foreach (var item in new ClienteBLL().Listar())
-                    {
-                        if (item.RutCliente.Contains(filtro))
-                        {
-                            clientesfiltrados.Add(item);
-                        }
-                    }
-                    dgridListarClientes.ItemsSource = clientesfiltrados;
+                    
+                    dgridListarClientes.ItemsSource = new ClienteBLL().FiltroporRut(filtro);
                     dgridListarClientes.Items.Refresh();
 
 
 
                     break;
                 case 2:
-                    foreach (var item in new ClienteBLL().Listar())
-                    {
-                        if (item.IdActividadEmpresa.ToString().ToUpper().Contains(filtro.ToUpper()))
-                        {
-                            clientesfiltrados.Add(item);
-                        }
-                    }
-                    dgridListarClientes.ItemsSource = clientesfiltrados;
+                    
+                    dgridListarClientes.ItemsSource = new ClienteBLL().FiltroporActEmpresa(filtro);
                     dgridListarClientes.Items.Refresh();
 
-           
+
                     break;
                 default:
                     break;
             }
+        }
+
+        private void Cbx_filtrarclientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txt_filtrarclientes.Text = "";
+            dgridListarClientes.ItemsSource = new ClienteBLL().Listar();
+            dgridListarClientes.Items.Refresh();
         }
     }
 }

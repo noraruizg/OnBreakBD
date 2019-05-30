@@ -246,12 +246,10 @@ namespace BLL
             c.IdTipoEmpresa = cl.IdTipoEmpresa;
 
             modelo.SaveChanges();
-           
         }
 
         public void Delete(string rut)
         {
-
             OnBreakEntities modelo = new OnBreakEntities();
             Cliente c = (from item in modelo.Cliente
                          where item.RutCliente == rut
@@ -260,7 +258,6 @@ namespace BLL
             Contrato con = (from item in modelo.Contrato
                             where item.RutCliente == c.RutCliente
                             select item).FirstOrDefault();
-
             if (con == null)
             {
                 modelo.Cliente.Remove(c);
@@ -270,11 +267,101 @@ namespace BLL
             {
                 throw new Exception("No se Puede Eliminar Al cliente Porque Tiene uno o mas contratos Asociados");
             }
-            
-            
+        }
+        
+        public List<ClienteBLL> FiltroporTipoEmpresa(string id) {
 
+
+            List<ClienteBLL> list = new List<ClienteBLL>();
+            
+            using (OnBreakEntities modelo = new OnBreakEntities())
+            {
+                IEnumerable<Cliente> lista =
+                    (from item in modelo.Cliente
+                      where item.IdTipoEmpresa.ToString().ToUpper().Contains(id.ToString().ToUpper())
+                      select item).ToList<Cliente>();
+
+                foreach (var item in lista)
+                {
+                    ClienteBLL nuevo = new ClienteBLL();
+                    nuevo.RutCliente = item.RutCliente;
+                    nuevo.RazonSocial = item.RazonSocial;
+                    nuevo.NombreContacto = item.NombreContacto;
+                    nuevo.MailContacto = item.MailContacto;
+                    nuevo.Direccion = item.Direccion;
+                    nuevo.Telefono = item.Telefono;
+                    nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
+                    nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+            }
         }
 
+        public List<ClienteBLL> FiltroporRut(string rut)
+        {
 
+
+            List<ClienteBLL> list = new List<ClienteBLL>();
+
+            using (OnBreakEntities modelo = new OnBreakEntities())
+            {
+                IEnumerable<Cliente> lista =
+                    (from item in modelo.Cliente
+                     where item.RutCliente.ToString().ToUpper().Contains(rut.ToString().ToUpper())
+                     select item).ToList<Cliente>();
+
+                foreach (var item in lista)
+                {
+                    ClienteBLL nuevo = new ClienteBLL();
+                    nuevo.RutCliente = item.RutCliente;
+                    nuevo.RazonSocial = item.RazonSocial;
+                    nuevo.NombreContacto = item.NombreContacto;
+                    nuevo.MailContacto = item.MailContacto;
+                    nuevo.Direccion = item.Direccion;
+                    nuevo.Telefono = item.Telefono;
+                    nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
+                    nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+            }
+        }
+
+        public List<ClienteBLL> FiltroporActEmpresa(string ae)
+        {
+
+
+            List<ClienteBLL> list = new List<ClienteBLL>();
+
+            using (OnBreakEntities modelo = new OnBreakEntities())
+            {
+                IEnumerable<Cliente> lista =
+                    (from item in modelo.Cliente
+                     where item.IdActividadEmpresa.ToString().ToUpper().Contains(ae.ToString().ToUpper())
+                     select item).ToList<Cliente>();
+
+                foreach (var item in lista)
+                {
+                    ClienteBLL nuevo = new ClienteBLL();
+                    nuevo.RutCliente = item.RutCliente;
+                    nuevo.RazonSocial = item.RazonSocial;
+                    nuevo.NombreContacto = item.NombreContacto;
+                    nuevo.MailContacto = item.MailContacto;
+                    nuevo.Direccion = item.Direccion;
+                    nuevo.Telefono = item.Telefono;
+                    nuevo.IdActividadEmpresa = item.IdActividadEmpresa;
+                    nuevo.IdTipoEmpresa = item.IdTipoEmpresa;
+
+                    list.Add(nuevo);
+                }
+
+                return list;
+            }
+        }
     }
 }
