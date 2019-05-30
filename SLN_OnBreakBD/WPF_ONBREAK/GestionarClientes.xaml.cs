@@ -256,7 +256,5 @@ namespace WPF_ONBREAK
         }
 
         
-
-
     }
 }

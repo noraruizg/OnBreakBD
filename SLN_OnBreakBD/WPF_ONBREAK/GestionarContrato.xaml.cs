@@ -109,7 +109,7 @@ namespace WPF_ONBREAK
                 {
                     if (txt_nro.Text == item.Numero.ToString())
                     {
-                        if (MessageBox.Show("Detalles: Contrato Encontrado!, Desea Editar sus Parametros?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+                        if (MessageBox.Show("Detalles: Contrato Disponible, Desea Editar sus Parametros?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
                         {
                             //do no stuff
                         }
@@ -124,26 +124,73 @@ namespace WPF_ONBREAK
                 if (search == false)
                 {
                     //si no existe
-
-                    if (MessageBox.Show("Contrato no registrado, Desea Agregarlo?", "Advertencia", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-                    {
-
-                        //do no stuff
-                    }
-                    else
-                    {
-                        AgregarContrato agrcon = new AgregarContrato();
-                        agrcon.Show();
-                        this.Close();
-                    }
+                    MessageBox.Show("Contrato no encontrado o no registrado", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    
                 }
 
             }
         }
 
-        private void DgridListContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
+
+    private void DgridListContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string num = ((ContratoBLL)dgridListContratos.SelectedItem).Numero;
+            ContratoBLL c = new ContratoBLL();
+            //if (c.BuscarRut(numc))
+            //{
+
+            //    if (MessageBox.Show("Desea Editar los Datos del Cliente con RUT " + rut + " o Eliminarlo del sistema?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        c = new ClienteBLL().DatosClienteporRut(rut);
+            //        EditarCliente edcli = new EditarCliente();
+            //        edcli.txt_rut.Text = c.RutCliente;
+            //        edcli.txt_nombreconta.Text = c.NombreContacto;
+            //        edcli.txt_direccion.Text = c.Direccion;
+            //        edcli.txt_mail.Text = c.MailContacto;
+            //        edcli.txt_razon.Text = c.RazonSocial;
+            //        edcli.txt_telefono.Text = c.Telefono.ToString();
+            //        foreach (var ac in new ActividadEmpresaBLL().Listar())
+            //        {
+            //            if (ac.IdActividadEmpresa == c.IdActividadEmpresa)
+            //            {
+            //                edcli.cbx_actividad.SelectedItem = ac.Descripcion;
+            //                break;
+            //            }
+            //        }
+            //        foreach (var te in new TipoEmpresaBLL().Listar())
+            //        {
+            //            if (te.IdTipoEmpresa == c.IdTipoEmpresa)
+            //            {
+            //                edcli.cbx_tipo.SelectedItem = te.Descripcion;
+            //                break;
+            //            }
+            //        }
+            //        edcli.Show();
+            //        this.Close();
+
+            //    }
+
+            //}
+        }
+
+        private void Btn_agregarcon_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Se Abrirá la pestaña de agregar contrato, ¿Desea continuar?", "Información", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+            {
+
+                //do no stuff
+            }
+            else
+            {
+                AgregarContrato agrcon = new AgregarContrato();
+                agrcon.Show();
+                this.Close();
+            }
         }
     }
 }
