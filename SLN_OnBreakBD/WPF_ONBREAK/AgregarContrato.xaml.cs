@@ -243,5 +243,10 @@ namespace WPF_ONBREAK
             }
             txt_busrut.Text = rut;
         }
+
+        private void Dptermino_SelectedDateChanged(object sender, TimePickerBaseSelectionChangedEventArgs<DateTime?> e)
+        {
+
+        }
     }
 }
