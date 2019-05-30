@@ -50,7 +50,7 @@
         <Label Content="Fecha y Hora Termino" HorizontalAlignment="Left" Margin="29.2,258,0,0" VerticalAlignment="Top" Width="182" FontSize="18" Height="37" Grid.Column="1"/>
         <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="363,536,0,0" VerticalAlignment="Top" Width="221" Height="51" Click="Btn_Cancelar_Click" />
         <Label Content="RUT Cliente:" HorizontalAlignment="Left" Margin="433,354,0,0" VerticalAlignment="Top" Width="110" FontSize="18" Height="37"/>
-        <TextBox x:Name="txt_busrut" HorizontalAlignment="Left" Height="23" Margin="543,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_busrut" HorizontalAlignment="Left" Height="23" Margin="543,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" Grid.ColumnSpan="2" LostFocus="Txt_busrut_LostFocus"/>
         <Label Content="Nombre Completo Contacto:" HorizontalAlignment="Left" Margin="285,420,0,0" VerticalAlignment="Top" Width="240" FontSize="18" Height="37"/>
         <TextBox x:Name="txt_nombre" HorizontalAlignment="Left" Height="23" Margin="540,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" IsEnabled="False" Grid.ColumnSpan="2"/>
         <Button x:Name="btn_busrut" Margin="71.2,354,465.6,223" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_busrut_Click" Grid.Column="1">

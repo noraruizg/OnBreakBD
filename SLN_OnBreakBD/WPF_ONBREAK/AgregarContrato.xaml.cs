@@ -115,8 +115,6 @@ namespace WPF_ONBREAK
                     string r = rut.Substring(0, 8);
                     rut = r + "-" + d;
                 }
-
-
             }
             else if (rut.Length == 8)
             {
@@ -209,6 +207,35 @@ namespace WPF_ONBREAK
             
         }
 
-        
+        private void Txt_busrut_LostFocus(object sender, RoutedEventArgs e)
+        {
+            string rut = txt_busrut.Text;
+            if (rut.Length == 9)
+            {
+                rut = rut.Replace("-", "").ToUpper();
+
+                if (rut.Length == 8)
+                {
+
+                    string dv = rut.Substring(rut.Length - 1, 1);
+                    string ru = rut.Substring(0, 7);
+                    rut = ru + "-" + dv;
+                }
+                else
+                {
+                    string d = rut.Substring(rut.Length - 1, 1);
+                    string r = rut.Substring(0, 8);
+                    rut = r + "-" + d;
+                }
+            }
+            else if (rut.Length == 8)
+            {
+
+                string d = rut.Substring(rut.Length - 1, 1);
+                string r = rut.Substring(0, 7);
+                rut = r + "-" + d;
+            }
+            txt_busrut.Text = rut;
+        }
     }
 }

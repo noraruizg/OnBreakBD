@@ -34,7 +34,6 @@ namespace WPF_ONBREAK
             dgrid_ModServicio.IsEnabled = false;
             dgrid_ModServicio.IsReadOnly = true;
 
-
             foreach (var item in App.darkmode)
             {
 
@@ -161,9 +160,9 @@ namespace WPF_ONBREAK
                 con.Realizado = false;
                 con.Observaciones = txt_observacion.Text;
 
-                //con.ValorTotalContrato =
+                con.ValorTotalContrato = double.Parse(txt_vtotal.Text.Trim().Remove(txt_vtotal.Text.Length-2,2));
 
-                //con.Crear();
+                con.Crear();
             }
         }
 
@@ -172,156 +171,94 @@ namespace WPF_ONBREAK
             
             
             txt_ide.Text = ((TipoEventoBLL)dgrid_eventos.SelectedItem).IdTipoEvento.ToString();
-            txt_personalAdicional.Text = "0";
-            txt_asistentes.Text = "0";
+            txt_nombree.Text = "";
+            txt_valorbase.Text = "";
+            txt_personal.Text = "";
             dgrid_ModServicio.ItemsSource = new ModalidadServicioBLL().Listar(((TipoEventoBLL)dgrid_eventos.SelectedItem).IdTipoEvento);
+            txt_asistentes.IsEnabled = false;
+            txt_personalAdicional.IsEnabled = false;
+            txt_observacion.IsEnabled = false;
             dgrid_ModServicio.IsEnabled = true;
+            dgrid_ModServicio.Items.Refresh();
         }
 
         private void Dgrid_ModServicio_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            txt_nombree.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).IdModalidad;
-            txt_valorbase.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).ValorBase.ToString();
-            txt_personal.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).PersonalBase.ToString();
-            txt_asistentes.IsEnabled = true;
-            txt_personalAdicional.IsEnabled = true;
+            if (dgrid_ModServicio.IsEnabled == true)
+            {
+                txt_nombree.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).IdModalidad;
+                txt_valorbase.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).ValorBase.ToString();
+                txt_personal.Text = ((ModalidadServicioBLL)dgrid_ModServicio.SelectedItem).PersonalBase.ToString();
+
+                txt_asistentes.IsEnabled = true;
+                txt_personalAdicional.IsEnabled = true;
+                txt_observacion.IsEnabled = true;
+                dgrid_ModServicio.IsEnabled = false;
+            }
+            
         }
 
 
         private void Txt_valorbase_TextChanged(object sender, TextChangedEventArgs e)
         {
-            txt_vtotal.Text =  " UF";
-        }
-
-      
-
-        private void Txt_asistentes_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //            Asistentes
-            //1 a 20  3 21 a 50  5 Más de 50 2 por cada 20 personas adicionales(no proporcional)
-
-           
-            double valor = 0;
-            double.TryParse(txt_asistentes.Text, out valor);
-            double cargoasis = valor;
-            valor = 0;
-            double.TryParse(txt_personalAdicional.Text, out valor);
-            double Cargoperso = valor;
-            valor = 0;
-            double.TryParse(txt_valorbase.Text, out valor);
-            double valBase = valor;
-            double aux = 0;
-            if (cargoasis >= 1 && cargoasis <= 20)
-            {
-                cargoasis = 3;
-            }
-            else if (cargoasis > 20 && cargoasis <= 50)
-            {
-                cargoasis = 5;
-            }
-            else
-            {
-                cargoasis = cargoasis - 50;
-                if (cargoasis % 20 == 0)
-                {
-                    cargoasis = cargoasis / 20;
-                    cargoasis = cargoasis * 2;
-                }
-                else
-                {
-                    aux = cargoasis % 20;
-                    cargoasis = (cargoasis - aux) / 20;
-                    cargoasis = (cargoasis + 1) * 2;
-
-                }
-            }
-            //            Personal Adicional(*) 
-            //2  2 3  3 4 3,5 Más de 4 3,5 + 0,5 por cada adicional
-            if (Cargoperso >= 1 && Cargoperso <= 2)
-            {
-                Cargoperso = 2;
-            }
-            else if (Cargoperso == 3)
-            {
-                Cargoperso = 3;
-            }
-            else if (Cargoperso == 4)
-            {
-                Cargoperso = 3.5;
-            }
-            else if (Cargoperso > 4)
-            {
-                Cargoperso = (Cargoperso - 4) * 0.5;
-                Cargoperso = 3.5 + Cargoperso;
-
-            }
-
-            double valtotal = valBase + cargoasis + Cargoperso;
-            txt_vtotal.Text = valtotal.ToString() + " UF";
-            btn_sguiente.IsEnabled = true;
-        }
-
-        private void Txt_personalAdicional_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            double valor = 0;
-            double.TryParse(txt_asistentes.Text, out valor);
-            double cargoasis = valor;
-            valor = 0;
-            double.TryParse(txt_personalAdicional.Text, out valor);
-            double Cargoperso = valor;
-            valor = 0;
-            double.TryParse(txt_valorbase.Text, out valor);
-            double ValBase = valor;
-            double aux = 0;
-            if (cargoasis >= 1 && cargoasis <= 20)
-            {
-                cargoasis = 3;
-            }
-            else if (cargoasis > 20 && cargoasis <= 50)
-            {
-                cargoasis = 5;
-            }
-            else
-            {
-                cargoasis = cargoasis - 50;
-                if (cargoasis % 20 == 0)
-                {
-                    cargoasis = cargoasis / 20;
-                    cargoasis = cargoasis * 2;
-                }
-                else
-                {
-                    aux = cargoasis % 20;
-                    cargoasis = (cargoasis - aux) / 20;
-                    cargoasis = (cargoasis + 1) * 2;
-
-                }
-            }
-            if (Cargoperso >= 1 && Cargoperso <= 2)
-            {
-                Cargoperso = 2;
-            }
-            else if (Cargoperso == 3)
-            {
-                Cargoperso = 3;
-            }
-            else if (Cargoperso == 4)
-            {
-                Cargoperso = 3.5;
-            }
-            else if (Cargoperso > 4)
-            {
-                Cargoperso = (Cargoperso - 4) * 0.5;
-                Cargoperso = 3.5 + Cargoperso;
-
-            }
-
-            double valtotal = ValBase + cargoasis + Cargoperso;
-            txt_vtotal.Text = valtotal.ToString() + "UF";
-
-            btn_sguiente.IsEnabled = true;
+            txt_vtotal.Text = txt_valorbase.Text + " UF";
         }
 
         
+
+
+        private void Txt_personalAdicional_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Valorizador v = new Valorizador();
+            double a = 0;
+            if (string.IsNullOrEmpty(txt_asistentes.Text) || txt_asistentes.Text == "0")
+            {
+                a = 0;
+            }
+            else
+            {
+                double.TryParse(txt_asistentes.Text, out a);
+            }
+
+            double p = 0;
+            if (string.IsNullOrEmpty(txt_personalAdicional.Text) || txt_personalAdicional.Text == "0")
+            {
+                p = 0;
+            }
+            else
+            {
+                double.TryParse(txt_personalAdicional.Text, out p);
+            }
+            
+            double val = double.Parse(txt_valorbase.Text);
+            txt_vtotal.Text = v.ValorTotalEvento(a, p, val).ToString() + " UF";
+        }
+
+        private void Txt_asistentes_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Valorizador v = new Valorizador();
+            double a = 0;
+            if (string.IsNullOrEmpty(txt_asistentes.Text))
+            {
+                a = 0;
+            }
+            else
+            {
+                double.TryParse(txt_asistentes.Text, out a);
+            }
+            double p = 0;
+            if (string.IsNullOrEmpty(txt_personalAdicional.Text ))
+            {
+                p = 0;
+            }
+            else
+            {
+                double.TryParse(txt_personalAdicional.Text, out p);
+            }
+            
+            double val = double.Parse(txt_valorbase.Text);
+            txt_vtotal.Text = v.ValorTotalEvento(a, p, val).ToString() + " UF";
+            btn_sguiente.IsEnabled = true;
+        }
     }
 }

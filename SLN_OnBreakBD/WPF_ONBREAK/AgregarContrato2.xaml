@@ -54,15 +54,15 @@
         <Label Content="Valor Total Evento: " HorizontalAlignment="Left" Margin="328,481,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Asistentes al Evento" HorizontalAlignment="Left" Margin="278,381,0,0" VerticalAlignment="Top" Width="127"/>
         <Label Content="Personal Adicional" HorizontalAlignment="Left" Margin="278,407,0,0" VerticalAlignment="Top" Width="127"/>
-        <TextBox x:Name="txt_asistentes" HorizontalAlignment="Left" Height="23" Margin="412,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txt_asistentes_TextChanged" Text="" IsEnabled="False"/>
-        <TextBox x:Name="txt_personalAdicional" HorizontalAlignment="Left" Height="23" Margin="412,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txt_personalAdicional_TextChanged" Text="" IsEnabled="False"/>
+        <TextBox x:Name="txt_asistentes" HorizontalAlignment="Left" Height="23" Margin="412,384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txt_asistentes_TextChanged"  IsEnabled="False"/>
+        <TextBox x:Name="txt_personalAdicional" HorizontalAlignment="Left" Height="23" Margin="412,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txt_personalAdicional_TextChanged" IsEnabled="False"/>
         <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="106.2,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" IsEnabled="False" Grid.Column="1"/>
         <Label Content="Rut Cliente :" HorizontalAlignment="Left" Margin="574,252,0,0" VerticalAlignment="Top" Width="119" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txt_nombrecontacto" HorizontalAlignment="Left" Height="23" Margin="106.2,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" IsEnabled="False" Grid.Column="1"/>
         <Label Content="Nombre de Contacto:" HorizontalAlignment="Left" Margin="574,284,0,0" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
         <Label Content="Observacion:" HorizontalAlignment="Left" Margin="574,319,0,0" VerticalAlignment="Top" Width="129" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="92" Margin="573,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="448,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="607" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="92" Margin="573,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Grid.ColumnSpan="2" IsEnabled="False"/>
+        <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="448,485,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="607" Grid.ColumnSpan="2" IsEnabled="False"/>
         <DataGrid x:Name="dgrid_ModServicio" HorizontalAlignment="Left" Height="260" Margin="335.2,254,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="Dgrid_ModServicio_SelectionChanged" Grid.Column="1"/>
     </Grid>
 </Controls:MetroWindow>

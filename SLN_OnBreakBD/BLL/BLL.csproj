@@ -58,6 +58,7 @@
     <Compile Include="TipoEventoBLL.cs" />
     <Compile Include="validar_mail.cs" />
     <Compile Include="validar_rut.cs" />
+    <Compile Include="Valorizador.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
