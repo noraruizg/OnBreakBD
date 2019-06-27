@@ -68,6 +68,6 @@
         </Button>
         <Image HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="228" Source="Images/logo.png"/>
         <Label Content="¡Bienvenido!" HorizontalAlignment="Left" Margin="458,69,0,0" VerticalAlignment="Top" Width="278" Height="81" FontSize="48" Grid.ColumnSpan="3" Foreground="White"/>
-        <Label Content="Selecciona Una Opción" HorizontalAlignment="Left" Margin="408,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="377" FontSize="36" FontStyle="Italic" Foreground="White"/>
+        <Label Content="Selecciona Una Opción" HorizontalAlignment="Left" Margin="408,138,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="393" FontSize="36" FontStyle="Italic" Foreground="White"/>
     </Grid>
 </Controls:MetroWindow>
