@@ -50,7 +50,7 @@
         <TextBox x:Name="txt_mail" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Margin="328,355,0,0" Background="#FF55D9CC" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="325" Margin="328,405,0,0" Grid.ColumnSpan="2" Background="#FF55D9CC"/>
         <ComboBox x:Name="cbx_actividad" HorizontalAlignment="Left" VerticalAlignment="Top" Width="325" Margin="328,453,0,0" Height="28" Background="#FF55D9CC" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cbx_tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="269,308,0,0" Height="29" Grid.Column="1" Background="#FF55D9CC"/>
+        <ComboBox x:Name="cbx_tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Margin="269,308,0,0" Height="29" Grid.Column="1" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
         <Button x:Name="btn_editarcli" Content="Editar" HorizontalAlignment="Left" Margin="365,522,0,0" VerticalAlignment="Top" Width="221" Height="51" Click="Btn_editarcli_Click" Background="#FFD4F266" FontSize="14" />
         <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="169,313,0,0" VerticalAlignment="Top" Width="115" FontSize="16" Height="32" Foreground="White"/>
         <Label Content="Direccion:" HorizontalAlignment="Left" Margin="170,412,0,0" VerticalAlignment="Top" Width="97" FontSize="16" Height="32" Foreground="White"/>
