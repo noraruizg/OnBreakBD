@@ -166,6 +166,11 @@ namespace WPF_ONBREAK
                     break;
             }
         }
+
+        private void DgridListarContratos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 }

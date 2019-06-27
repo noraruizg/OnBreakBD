@@ -26,6 +26,12 @@
     </Controls:MetroWindow.RightWindowCommands>
 
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FF58A7F7"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -33,19 +39,19 @@
             <ColumnDefinition Width="600*"/>
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_inicio" Margin="116,33,230.8,398" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
+        <Button x:Name="btn_inicio" Margin="114,7,233,424" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
-        <Label x:Name="lbl_title" Content="Gestionar Clientes" HorizontalAlignment="Left" Margin="388,52,0,0" VerticalAlignment="Top" Width="418" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbl_subtitle" Content="Agregar Cliente" HorizontalAlignment="Left" Margin="506,132,0,0" VerticalAlignment="Top" Width="184" FontSize="24" Height="48" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="436,185,0,0" VerticalAlignment="Top" Width="325" FontSize="20" Height="37" Grid.ColumnSpan="2"/>
-        <Label Content="RUT:" HorizontalAlignment="Left" Margin="136,269,0,0" VerticalAlignment="Top" Width="54" FontSize="18" Height="33" RenderTransformOrigin="1.148,0.788"/>
-        <TextBox x:Name="txt_telefono" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Margin="261,426,0,0" TextChanged="Txt_telefono_TextChanged"/>
-        <TextBox x:Name="txt_nombreconta" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Margin="182,276,0,0" Grid.Column="1"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Margin="261,276,0,0" IsEnabled="False"/>
-        <TextBox x:Name="txt_razon" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="247" Margin="261,330,0,0"/>
-        <TextBox x:Name="txt_mail" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Margin="182,330,0,0" Grid.Column="1"/>
-        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="900" Margin="261,378,0,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+        <Label x:Name="lbl_title" Content="Gestionar Clientes" HorizontalAlignment="Left" Margin="388,52,0,0" VerticalAlignment="Top" Width="418" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label x:Name="lbl_subtitle" Content="Agregar Cliente" HorizontalAlignment="Left" Margin="506,132,0,0" VerticalAlignment="Top" Width="184" FontSize="24" Height="48" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="534,553,0,0" VerticalAlignment="Top" Width="326" FontSize="14" Height="37" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="RUT:" HorizontalAlignment="Left" Margin="194,221,0,0" VerticalAlignment="Top" Width="54" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
+        <TextBox x:Name="txt_telefono" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Margin="162,331,0,0" TextChanged="Txt_telefono_TextChanged" Background="#FF55D9CC" Grid.Column="1"/>
+        <TextBox x:Name="txt_nombreconta" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Margin="162,228,0,0" Grid.Column="1" Background="#FF55D9CC" FontSize="14"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="314,228,0,0" IsEnabled="False" Background="#FF55D9CC"/>
+        <TextBox x:Name="txt_razon" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="314,282,0,0" Background="#FF55D9CC"/>
+        <TextBox x:Name="txt_mail" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Margin="162,282,0,0" Grid.Column="1" Background="#FF55D9CC" FontSize="14"/>
+        <TextBox x:Name="txt_direccion" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="314,331,0,0" RenderTransformOrigin="0.5,0.5" Background="#FF55D9CC" FontSize="14">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,17 +61,17 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <ComboBox x:Name="cbx_actividad" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="527,426,0,0" Height="28" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="cbx_tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="209" Grid.Column="1" Margin="217,426,0,0" Height="26"/>
-        <Button x:Name="btn_agregarcli" Content="Agregar" HorizontalAlignment="Left" Margin="484,520,0,0" VerticalAlignment="Top" Width="221" Grid.ColumnSpan="2" Height="51" Click="Btn_agregarcli_Click"/>
-        <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="136,322,0,0" VerticalAlignment="Top" Width="115" FontSize="18" Height="30"/>
-        <Label Content="Direccion:" HorizontalAlignment="Left" Margin="136,373,0,0" VerticalAlignment="Top" Width="97" FontSize="18" Height="34"/>
-        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="136,419,0,0" VerticalAlignment="Top" Width="97" FontSize="18" Height="33" RenderTransformOrigin="0.098,0.621"/>
-        <Label Content="Actividad:" HorizontalAlignment="Left" Margin="436,421,0,0" VerticalAlignment="Top" Width="97" FontSize="18" Height="33"/>
-        <Label Content="Mail Contacto:" HorizontalAlignment="Left" Margin="0,324,0,0" VerticalAlignment="Top" Width="128" FontSize="18" Height="30" RenderTransformOrigin="-1.231,-2.348" Grid.Column="1"/>
-        <Label Content="Nombre Contacto:" HorizontalAlignment="Left" Margin="0,269,0,0" VerticalAlignment="Top" Width="162" FontSize="18" Height="33" RenderTransformOrigin="-1.231,-2.348" Grid.Column="1"/>
-        <Label Content="Tipo:" HorizontalAlignment="Left" Margin="164.2,419,0,0" VerticalAlignment="Top" Width="59" FontSize="18" Height="33" Grid.Column="1" RenderTransformOrigin="-1.231,-2.348"/>
-        <Label x:Name="lbl_1" Content="Label" HorizontalAlignment="Left" Margin="136,520,0,0" VerticalAlignment="Top" Width="266"/>
+        <ComboBox x:Name="cbx_actividad" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Margin="314,434,0,0" Height="22" Background="#FF55D9CC" FontSize="14"/>
+        <ComboBox x:Name="cbx_tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" Margin="314,385,0,0" Height="22" Background="#FF55D9CC" FontSize="14"/>
+        <Button x:Name="btn_agregarcli" Content="Agregar" HorizontalAlignment="Left" Margin="534,502,0,0" VerticalAlignment="Top" Width="222" Grid.ColumnSpan="2" Height="51" Click="Btn_agregarcli_Click" Background="#FFD4F266" FontSize="14"/>
+        <Label Content="Razón Social:" HorizontalAlignment="Left" Margin="194,274,0,0" VerticalAlignment="Top" Width="115" FontSize="16" Height="33" Foreground="White"/>
+        <Label Content="Direccion:" HorizontalAlignment="Left" Margin="194,325,0,0" VerticalAlignment="Top" Width="97" FontSize="16" Height="33" Foreground="White"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Margin="591,325,0,0" VerticalAlignment="Top" Width="97" FontSize="16" Height="33" RenderTransformOrigin="0.098,0.621" Foreground="White" Grid.ColumnSpan="2"/>
+        <Label Content="Actividad:" HorizontalAlignment="Left" Margin="194,429,0,0" VerticalAlignment="Top" Width="97" FontSize="16" Height="33" Foreground="White"/>
+        <Label Content="Mail Contacto:" HorizontalAlignment="Left" Margin="591,274,0,0" VerticalAlignment="Top" Width="128" FontSize="16" Height="33" RenderTransformOrigin="-1.231,-2.348" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Nombre Contacto:" HorizontalAlignment="Left" Margin="591,221,0,0" VerticalAlignment="Top" Width="162" FontSize="16" Height="33" RenderTransformOrigin="-1.231,-2.348" Grid.ColumnSpan="2" Foreground="White"/>
+        <Label Content="Tipo Empresa:" HorizontalAlignment="Left" Margin="194,378,0,0" VerticalAlignment="Top" Width="102" FontSize="16" Height="33" RenderTransformOrigin="-1.231,-2.348" Foreground="White"/>
+        <Label Content="&lt;- Volver " HorizontalAlignment="Left" Margin="192,132,0,0" VerticalAlignment="Top" Width="99" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
 
     </Grid>
 </Controls:MetroWindow>
