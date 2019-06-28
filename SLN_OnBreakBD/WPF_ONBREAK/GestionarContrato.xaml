@@ -45,7 +45,23 @@
         <TextBox x:Name="txt_nro" HorizontalAlignment="Left" Height="31" Margin="499,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Grid.ColumnSpan="2" Background="#FF55D9CC" />
         <Label x:Name="lbl_subtitle" Content="Ingrese Numero de Contrato a buscar" HorizontalAlignment="Left" Margin="420,127,0,0" VerticalAlignment="Top" Width="354" FontSize="20" Height="37" Grid.ColumnSpan="2" Foreground="White"/>
         <Button x:Name="btn_buscar" Content="Buscar" HorizontalAlignment="Left" Margin="146.2,169,0,0" VerticalAlignment="Top" Width="89" Height="31" Grid.Column="1" Click="Btn_buscar_Click" Background="#FFD4F266"/>
-        <DataGrid x:Name="dgridListContratos" HorizontalAlignment="Left" Height="297" Margin="35,249,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2" SelectionChanged="DgridListContratos_SelectionChanged" Background="#FF55D9CC"/>
+        <DataGrid x:Name="dgridListContratos" HorizontalAlignment="Left" Height="297" Margin="35,249,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2" SelectionChanged="DgridListContratos_SelectionChanged" Background="#FF55D9CC" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="id"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Creación"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="vigencia"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="rut"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="id modalidad"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="id evento"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="inicio"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="termino"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="asistentes"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="p. adicional"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="realizado"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="total"/>
+                <DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="obs."/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btn_volver" Content="Volver al Menú" HorizontalAlignment="Left" Margin="543,566,0,0" VerticalAlignment="Top" Width="107" Height="31" Grid.ColumnSpan="2" Click="Btn_volver_Click" Background="#FFD4F266"/>
         <Button x:Name="btn_agregarcon" Content="Agregar Contrato" HorizontalAlignment="Left" Margin="362,213,0,0" VerticalAlignment="Top" Width="470" Height="31" Click="Btn_agregarcon_Click" Grid.ColumnSpan="2" Background="#FFD4F266"/>
         <Image HorizontalAlignment="Left" Height="170" Margin="398.2,52,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>

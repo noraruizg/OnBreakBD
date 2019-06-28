@@ -47,7 +47,7 @@ namespace WPF_ONBREAK
                     ThemeManager.ChangeAppStyle(this,
                                             ThemeManager.GetAccent("Teal"),
                                             ThemeManager.GetAppTheme("BaseLight"));
-                    //fondo.Visibility = Visibility.Hidden;
+                    
                     break;
                 }
             }
@@ -63,7 +63,7 @@ namespace WPF_ONBREAK
                     ThemeManager.ChangeAppStyle(this,
                                             ThemeManager.GetAccent("Violet"),
                                             ThemeManager.GetAppTheme("BaseDark"));
-                    //fondo.Visibility = Visibility.Visible;
+                    Fondo.Visibility = Visibility.Hidden;
                     item.State = true;
                     break;
                 }
@@ -72,7 +72,7 @@ namespace WPF_ONBREAK
                     ThemeManager.ChangeAppStyle(this,
                                             ThemeManager.GetAccent("Teal"),
                                             ThemeManager.GetAppTheme("BaseLight"));
-                    //fondo.Visibility = Visibility.Hidden;
+                    Fondo.Visibility = Visibility.Visible;
                     item.State = false;
                     break;
                 }

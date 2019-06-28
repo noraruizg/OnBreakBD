@@ -17,7 +17,7 @@
         <Controls:WindowCommands>
             <Button Click="btn_ventana_click">
                 <StackPanel Orientation="Horizontal">
-
+                    <iconPacks:PackIconModern Width="24" Height="24" Kind="Moon" />
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center"/>
 
                 </StackPanel>
@@ -27,7 +27,7 @@
 
 
 
-    <Grid>
+    <Grid x:Name="Fondo">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>

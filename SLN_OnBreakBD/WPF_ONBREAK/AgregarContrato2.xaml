@@ -71,7 +71,7 @@
         <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="115,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" IsEnabled="False" Background="#FF55D9CC" Grid.Column="1" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
         <DataGrid x:Name="dgrid_ModServicio" HorizontalAlignment="Left" Height="260" Margin="169,217,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="Dgrid_ModServicio_SelectionChanged" Grid.Column="1" Background="#FF55D9CC"/>
         <Label x:Name="lbl_subtitle_2_Copy" Content="Seleccione un Tipo de Evento" HorizontalAlignment="Left" Margin="498,187,0,0" VerticalAlignment="Top" Width="219" FontSize="16" Height="37" Foreground="White" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="157,187,0,0" VerticalAlignment="Top" Width="280" FontSize="16" Height="37" Grid.Column="1" Foreground="#FFFBFAFA"/>
+        <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="157,187,0,0" VerticalAlignment="Top" Width="289" FontSize="16" Height="37" Grid.Column="1" Foreground="#FFFBFAFA"/>
         <Image HorizontalAlignment="Left" Height="170" Margin="387,17,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
         <Label Content="&lt;- Volver " HorizontalAlignment="Left" Margin="120,135,0,0" VerticalAlignment="Top" Width="99" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
     </Grid>
