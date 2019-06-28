@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Title="ListarClientes" Height="650" Width="1200"
+        Title="Listado de Clientes" Height="650" Width="1200"
         GlowBrush="{DynamicResource AccentColorBrush}"
         WindowStartupLocation="CenterScreen"
         ShowIconOnTitleBar="True">
@@ -38,7 +38,7 @@
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btn_inicio" HorizontalAlignment="Left" Margin="25,35,0,0" VerticalAlignment="Top" Width="187" Height="187" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
-            <Image Source="Images/logo.png" Height="175" Width="186"/>
+            <Image Source="Images/logo.png" Height="146" Width="177"/>
         </Button>
         <Label x:Name="lbl_listarClientes" Content="Listar Clientes" HorizontalAlignment="Left" Margin="433,57,0,0" VerticalAlignment="Top" Width="329" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="White"/>
         <DataGrid x:Name="dgridListarClientes" HorizontalAlignment="Left" Height="321" Margin="35,225,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2" Background="#FF55D9CC" />

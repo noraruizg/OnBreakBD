@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
-        Height="650" Width="1200"
+        
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                       Title="ONBREAK || Menú Principal" Height="650" Width="1200"
         WindowStartupLocation="CenterScreen"
         GlowBrush="{DynamicResource AccentColorBrush}"
         ShowIconOnTitleBar="True">

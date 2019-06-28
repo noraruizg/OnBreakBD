@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
-        Title="AgregarContrato2" Height="650" Width="1200"
+        Title="Agregar Contrato" Height="650" Width="1200"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         WindowStartupLocation="CenterScreen"
@@ -48,31 +48,31 @@
         <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="14,577,0,0" VerticalAlignment="Top" Width="326" FontSize="14" Height="37" Foreground="White" Grid.Column="1"/>
         <Button x:Name="btn_sguiente" Content="Crear Contrato" HorizontalAlignment="Left" Margin="169,532,0,0" VerticalAlignment="Top" Width="220" Height="45" Grid.Column="1" Click="Btn_sguiente_Click" IsEnabled="False" Background="#FFD4F266" FontSize="14" />
         <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="523,532,0,0" VerticalAlignment="Top" Width="220" Height="45" Click="Btn_Cancelar_Click" Background="#FFD4F266" Grid.ColumnSpan="2" FontSize="14" />
-        <DataGrid x:Name="dgrid_eventos" HorizontalAlignment="Left" Height="260" Margin="478,217,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="Dgrid_eventos_SelectionChanged" Background="#FF55D9CC" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txt_nombree" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="249,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <Label Content="ID de Modalidad:" HorizontalAlignment="Left" Margin="85,300,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFDFD" FontSize="16"/>
-        <TextBox x:Name="txt_ide" HorizontalAlignment="Left" Height="23" Margin="249,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <Label Content="ID de Evento:" HorizontalAlignment="Left" Margin="85,268,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFAFA" FontSize="16"/>
-        <TextBox x:Name="txt_personal" HorizontalAlignment="Left" Height="23" Margin="249,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <Label Content="Personal Base:" HorizontalAlignment="Left" Margin="85,331,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFF9F8F8" FontSize="16"/>
-        <TextBox x:Name="txt_valorbase" HorizontalAlignment="Left" Height="23" Margin="249,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" TextChanged="Txt_valorbase_TextChanged" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <Label Content="Valor Base de Evento:" HorizontalAlignment="Left" Margin="85,362,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFFBF6F6" FontSize="16"/>
-        <Label Content="Valor Total Evento: " HorizontalAlignment="Left" Margin="539,490,0,0" VerticalAlignment="Top" Width="157" Foreground="#FFF7F6F6" RenderTransformOrigin="0.327,0.527" Grid.ColumnSpan="2" FontSize="18"/>
-        <Label Content="Asistentes al Evento:" HorizontalAlignment="Left" Margin="85,393,0,0" VerticalAlignment="Top" Width="159" Foreground="#FFFFFEFE" FontSize="16"/>
-        <Label Content="Personal Adicional:" HorizontalAlignment="Left" Margin="85,424,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFBF8F8" FontSize="16"/>
-        <TextBox x:Name="txt_asistentes" HorizontalAlignment="Left" Height="23" Margin="249,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" TextChanged="Txt_asistentes_TextChanged"  IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <TextBox x:Name="txt_personalAdicional" HorizontalAlignment="Left" Height="23" Margin="249,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" TextChanged="Txt_personalAdicional_TextChanged" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="249,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC"/>
-        <Label Content="Rut Cliente :" HorizontalAlignment="Left" Margin="85,203,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFAFA" FontSize="16"/>
-        <TextBox x:Name="txt_nombrecontacto" HorizontalAlignment="Left" Height="23" Margin="249,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <Label Content="Nombre de Contacto:" HorizontalAlignment="Left" Margin="85,236,0,0" VerticalAlignment="Top" Width="164" Foreground="#FFFBF8F8" FontSize="16"/>
-        <Label Content="Observacion:" HorizontalAlignment="Left" Margin="85,455,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFFFCFC" RenderTransformOrigin="-0.941,4.077" FontSize="16"/>
-        <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="122" Margin="249,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="115,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" IsEnabled="False" Background="#FF55D9CC" Grid.Column="1" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
-        <DataGrid x:Name="dgrid_ModServicio" HorizontalAlignment="Left" Height="260" Margin="169,217,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="Dgrid_ModServicio_SelectionChanged" Grid.Column="1" Background="#FF55D9CC"/>
-        <Label x:Name="lbl_subtitle_2_Copy" Content="Seleccione un Tipo de Evento" HorizontalAlignment="Left" Margin="498,187,0,0" VerticalAlignment="Top" Width="219" FontSize="16" Height="37" Foreground="White" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="157,187,0,0" VerticalAlignment="Top" Width="289" FontSize="16" Height="37" Grid.Column="1" Foreground="#FFFBFAFA"/>
-        <Image HorizontalAlignment="Left" Height="170" Margin="387,17,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
+        <DataGrid x:Name="dgrid_eventos" HorizontalAlignment="Left" Height="260" Margin="32,241,0,0" VerticalAlignment="Top" Width="270" SelectionChanged="Dgrid_eventos_SelectionChanged" Background="#FF55D9CC"/>
+        <TextBox x:Name="txt_nombree" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="163,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <Label Content="ID de Modalidad:" HorizontalAlignment="Left" Margin="595,234,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFDFD" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_ide" HorizontalAlignment="Left" Height="23" Margin="163,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <Label Content="ID de Evento:" HorizontalAlignment="Left" Margin="595,202,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFAFA" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_personal" HorizontalAlignment="Left" Height="23" Margin="163,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <Label Content="Personal Base:" HorizontalAlignment="Left" Margin="595,265,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFF9F8F8" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_valorbase" HorizontalAlignment="Left" Height="23" Margin="163,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" TextChanged="Txt_valorbase_TextChanged" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <Label Content="Valor Base de Evento:" HorizontalAlignment="Left" Margin="595,296,0,0" VerticalAlignment="Top" Width="178" Foreground="#FFFBF6F6" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Content="Valor Total Evento: " HorizontalAlignment="Left" Margin="93,514,0,0" VerticalAlignment="Top" Width="157" Foreground="#FFF7F6F6" RenderTransformOrigin="0.327,0.527" FontSize="18"/>
+        <Label Content="Asistentes al Evento:" HorizontalAlignment="Left" Margin="595,327,0,0" VerticalAlignment="Top" Width="159" Foreground="#FFFFFEFE" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Content="Personal Adicional:" HorizontalAlignment="Left" Margin="595,358,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFBF8F8" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_asistentes" HorizontalAlignment="Left" Height="23" Margin="163,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" TextChanged="Txt_asistentes_TextChanged"  IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="txt_personalAdicional" HorizontalAlignment="Left" Height="23" Margin="163,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" TextChanged="Txt_personalAdicional_TextChanged" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="txt_rut" HorizontalAlignment="Left" Height="23" Margin="163,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Grid.Column="1"/>
+        <Label Content="Rut Cliente :" HorizontalAlignment="Left" Margin="595,137,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFDFAFA" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_nombrecontacto" HorizontalAlignment="Left" Height="23" Margin="163,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <Label Content="Nombre de Contacto:" HorizontalAlignment="Left" Margin="595,170,0,0" VerticalAlignment="Top" Width="164" Foreground="#FFFBF8F8" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Content="Observacion:" HorizontalAlignment="Left" Margin="595,389,0,0" VerticalAlignment="Top" Width="148" Foreground="#FFFFFCFC" RenderTransformOrigin="-0.941,4.077" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txt_observacion" HorizontalAlignment="Left" Height="122" Margin="163,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center" Grid.Column="1"/>
+        <TextBox x:Name="txt_vtotal" HorizontalAlignment="Left" Height="23" Margin="265,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" IsEnabled="False" Background="#FF55D9CC" Controls:TextBoxHelper.WatermarkAlignment="Center"/>
+        <DataGrid x:Name="dgrid_ModServicio" HorizontalAlignment="Left" Height="260" Margin="319,241,0,0" VerticalAlignment="Top" Width="255" SelectionChanged="Dgrid_ModServicio_SelectionChanged" Background="#FF55D9CC"/>
+        <Label x:Name="lbl_subtitle_2_Copy" Content="Seleccione un Tipo de Evento" HorizontalAlignment="Left" Margin="52,211,0,0" VerticalAlignment="Top" Width="219" FontSize="16" Height="37" Foreground="White"/>
+        <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="307,211,0,0" VerticalAlignment="Top" Width="289" FontSize="16" Height="37" Foreground="#FFFBFAFA"/>
+        <Image HorizontalAlignment="Left" Height="170" Margin="398,14,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
         <Label Content="&lt;- Volver " HorizontalAlignment="Left" Margin="120,135,0,0" VerticalAlignment="Top" Width="99" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
     </Grid>
 </Controls:MetroWindow>

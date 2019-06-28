@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_ONBREAK"
         mc:Ignorable="d"
-        Title="AgregarContrato" Height="650" Width="1200"
+        Title="Agregar Nuevo Contrato" Height="650" Width="1200"
          xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:wpfx="http://metro.mahapps.com/winfx/xaml/controls"

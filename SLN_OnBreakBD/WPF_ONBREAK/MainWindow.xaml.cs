@@ -35,7 +35,7 @@ namespace WPF_ONBREAK
                     ThemeManager.ChangeAppStyle(this,
                                             ThemeManager.GetAccent("Violet"),
                                             ThemeManager.GetAppTheme("BaseDark"));
-                    //fondo.Visibility = Visibility.Visible;
+                    //Fondo.Visibility = Visibility.Visible;
                     break;
                 }
                 else
@@ -43,7 +43,7 @@ namespace WPF_ONBREAK
                     ThemeManager.ChangeAppStyle(this,
                                             ThemeManager.GetAccent("Teal"),
                                             ThemeManager.GetAppTheme("BaseLight"));
-                    //fondo.Visibility = Visibility.Hidden;
+                    //Fondo.Visibility = Visibility.Hidden;
                     break;
                 }
             }
