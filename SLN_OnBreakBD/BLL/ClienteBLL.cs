@@ -68,8 +68,7 @@ namespace BLL
                 }
             }
         }
-
-        
+                
 
         private string mailContacto;
 
