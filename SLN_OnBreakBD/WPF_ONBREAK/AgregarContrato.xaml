@@ -62,11 +62,14 @@
         <Button x:Name="btn_busrut" Margin="134,215,404,362" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_busrut_Click" Grid.Column="1">
             <Image Source="Images/buscar.png" Height="27" Width="26"/>
         </Button>
+
         <Label Content="Razón Social del Cliente:" HorizontalAlignment="Left" Margin="185,317,0,0" VerticalAlignment="Top" Width="240" FontSize="16" Height="36" Foreground="#FFFBFBFB"/>
         <TextBox x:Name="txt_rsocial" HorizontalAlignment="Left" Height="25" Margin="440,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" IsEnabled="False" Grid.ColumnSpan="2" Background="#FF55D9CC"/>
         <Label x:Name="lbl_subtitle_2_Copy" Content="Ingrese RUT a Buscar" HorizontalAlignment="Left" Margin="498,180,0,0" VerticalAlignment="Top" Width="176" FontSize="16" Height="37" Foreground="#FFFDFCFC" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="170" Margin="379,32,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
         <Label Content="&lt;- Volver " HorizontalAlignment="Left" Margin="136,139,0,0" VerticalAlignment="Top" Width="98" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
+
+
 
 
 

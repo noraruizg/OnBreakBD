@@ -43,6 +43,7 @@
         <Button x:Name="btn_inicio" Margin="46,14,300.8,417" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
+
         <Label x:Name="lbl_title" Content="Gestionar Contratos" HorizontalAlignment="Left" Margin="366,31,0,0" VerticalAlignment="Top" Width="461" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="#FFF9F9F9"/>
         <Label x:Name="lbl_subtitle" Content="Agregar Contrato" HorizontalAlignment="Left" Margin="498,92,0,0" VerticalAlignment="Top" Width="198" FontSize="24" Height="48" Grid.ColumnSpan="2" Foreground="#FFFFFEFE"/>
         <Label x:Name="lbl_subtitle_2" Content="Todos los Campos son obligatorios" HorizontalAlignment="Left" Margin="14,577,0,0" VerticalAlignment="Top" Width="326" FontSize="14" Height="37" Foreground="White" Grid.Column="1"/>
@@ -74,5 +75,6 @@
         <Label x:Name="lbl_subtitle_2_Copy1" Content="Seleccione una Modalidad de Evento" HorizontalAlignment="Left" Margin="307,211,0,0" VerticalAlignment="Top" Width="289" FontSize="16" Height="37" Foreground="#FFFBFAFA"/>
         <Image HorizontalAlignment="Left" Height="170" Margin="405,14,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
         <Label Content="&lt;- Volver " HorizontalAlignment="Left" Margin="120,135,0,0" VerticalAlignment="Top" Width="99" FontSize="16" Height="33" RenderTransformOrigin="1.148,0.788" Foreground="White"/>
+
     </Grid>
 </Controls:MetroWindow>

@@ -40,6 +40,7 @@
         <Button x:Name="btn_inicio" HorizontalAlignment="Left" Margin="25,35,0,0" VerticalAlignment="Top" Width="187" Height="187" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Btn_inicio_Click">
             <Image Source="Images/logo.png" Height="175" Width="186"/>
         </Button>
+
         <Label x:Name="lbl_title" Content="Gestionar Contratos" HorizontalAlignment="Left" Margin="363,52,0,0" VerticalAlignment="Top" Width="469" Height="75" FontSize="48" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="White"/>
         <Label x:Name="lbl_nro" Content="Nro. Contrato:" HorizontalAlignment="Left" Margin="362,169,0,0" VerticalAlignment="Top" Width="137" FontSize="20" Height="35" Foreground="White"/>
         <TextBox x:Name="txt_nro" HorizontalAlignment="Left" Height="31" Margin="499,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Grid.ColumnSpan="2" Background="#FF55D9CC" />
@@ -48,6 +49,7 @@
         <DataGrid x:Name="dgridListContratos" HorizontalAlignment="Left" Height="297" Margin="35,249,0,0" VerticalAlignment="Top" Width="1127" Grid.ColumnSpan="2" SelectionChanged="DgridListContratos_SelectionChanged" Background="#FF55D9CC"/>
         <Button x:Name="btn_volver" Content="Volver al Menú" HorizontalAlignment="Left" Margin="543,566,0,0" VerticalAlignment="Top" Width="107" Height="31" Grid.ColumnSpan="2" Click="Btn_volver_Click" Background="#FFD4F266"/>
         <Button x:Name="btn_agregarcon" Content="Agregar Contrato" HorizontalAlignment="Left" Margin="362,213,0,0" VerticalAlignment="Top" Width="470" Height="31" Click="Btn_agregarcon_Click" Grid.ColumnSpan="2" Background="#FFD4F266"/>
+
         <Image HorizontalAlignment="Left" Height="170" Margin="398.2,52,0,0" VerticalAlignment="Top" Width="167" Source="Images/Contrato.png" Grid.Column="1"/>
 
     </Grid>
